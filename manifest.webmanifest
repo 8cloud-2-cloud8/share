@@ -1,0 +1,20 @@
+{
+  "name": "乐享 · 共同出行记账",
+  "short_name": "乐享",
+  "description": "2–10 人共同出行的简易记账、分账、限额与结算工具",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f1ea",
+  "theme_color": "#1c6353",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
