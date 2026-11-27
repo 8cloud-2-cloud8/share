@@ -1,6 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" rx="118" fill="#1c6353"/>
-  <circle cx="424" cy="96" r="88" fill="none" stroke="#f4f1ea" stroke-opacity=".14" stroke-width="18"/>
-  <circle cx="424" cy="96" r="138" fill="none" stroke="#f4f1ea" stroke-opacity=".07" stroke-width="18"/>
-  <text x="256" y="340" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Helvetica,Arial,sans-serif" font-size="278" font-weight="800" fill="#f8f2e5">S</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#735b83"/>
+      <stop offset=".55" stop-color="#5b456b"/>
+      <stop offset="1" stop-color="#443150"/>
+    </linearGradient>
+    <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset=".45" stop-color="#f6e7d3"/>
+      <stop offset="1" stop-color="#e8d2ba"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f8eddf" stop-opacity=".05"/>
+      <stop offset=".55" stop-color="#f8eddf" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#f8eddf" stop-opacity=".9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".4" r=".6">
+      <stop offset="0" stop-color="#f3d9c3" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#f3d9c3" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#2e2038" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="118" fill="url(#glow)"/>
+  <circle cx="430" cy="86" r="78" fill="none" stroke="#f8eddf" stroke-opacity=".10" stroke-width="14"/>
+  <circle cx="430" cy="86" r="118" fill="none" stroke="#f8eddf" stroke-opacity=".05" stroke-width="14"/>
+  <g fill="none" stroke="#f8eddf" stroke-linecap="round" opacity=".5">
+    <path d="M338 123 L500 103" stroke-width="2.2"/>
+    <path d="M336 145 L500 126" stroke-width="2.0"/>
+    <path d="M334 167 L500 149" stroke-width="1.8"/>
+    <path d="M332 189 L500 172" stroke-width="1.6"/>
+    <path d="M12 408 L252 432" stroke-width="2.0"/>
+    <path d="M12 430 L248 454" stroke-width="1.8"/>
+    <path d="M12 452 L244 476" stroke-width="1.6"/>
+    <path d="M12 474 L240 498" stroke-width="1.4"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <g fill="none" stroke="#f8eddf" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M415 190 C408 122 337 82 255 88 C166 94 98 157 112 225 C124 286 205 307 268 304 C344 300 413 323 414 382 C415 451 333 490 250 490 C180 490 120 458 96 410" stroke-width="84" stroke-opacity=".05"/>
+      <path d="M415 190 C408 122 337 82 255 88 C166 94 98 157 112 225 C124 286 205 307 268 304 C344 300 413 323 414 382 C415 451 333 490 250 490 C180 490 120 458 96 410" stroke-width="76" stroke-opacity=".08"/>
+      <path d="M415 190 C408 122 337 82 255 88 C166 94 98 157 112 225 C124 286 205 307 268 304 C344 300 413 323 414 382 C415 451 333 490 250 490 C180 490 120 458 96 410" stroke-width="68" stroke-opacity=".13"/>
+      <path d="M415 190 C408 122 337 82 255 88 C166 94 98 157 112 225 C124 286 205 307 268 304 C344 300 413 323 414 382 C415 451 333 490 250 490 C180 490 120 458 96 410" stroke-width="60" stroke-opacity=".2"/>
+      <path d="M415 190 C408 122 337 82 255 88 C166 94 98 157 112 225 C124 286 205 307 268 304 C344 300 413 323 414 382 C415 451 333 490 250 490 C180 490 120 458 96 410" stroke="url(#sGrad)" stroke-width="52"/>
+    </g>
+    <path d="M390 156 C367 117 312 99 260 104" fill="none" stroke="#fffdf7" stroke-width="10" stroke-linecap="round" opacity=".5"/>
+    <path d="M135 424 C160 458 198 472 238 474" fill="none" stroke="#fffdf7" stroke-width="7" stroke-linecap="round" opacity=".28"/>
+  </g>
+  <circle cx="100" cy="96" r="7" fill="#f8eddf" fill-opacity=".55"/>
+  <circle cx="80" cy="73" r="3.5" fill="#f8eddf" fill-opacity=".3"/>
 </svg>

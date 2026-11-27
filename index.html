@@ -23,16 +23,21 @@
   --muted:#7b857f;
   --line:rgba(23,51,43,.10);
   --line-strong:rgba(23,51,43,.17);
-  --accent:#1c6353;
-  --accent-deep:#12483c;
-  --accent-soft:#e4efeb;
-  --hero-a:#1d6353;
-  --hero-b:#12483c;
-  --hero-c:#0f3d33;
-  --hero-glow:rgba(213,178,112,.36);
-  --hero-shadow:rgba(18,72,60,.23);
+  --accent:#645074;
+  --accent-deep:#473650;
+  --accent-soft:#efe9f2;
+  --hero-a:#6a547b;
+  --hero-b:#4b3958;
+  --hero-c:#382944;
+  --hero-glow:rgba(210,183,220,.30);
+  --hero-shadow:rgba(70,54,80,.22);
   --page-bg:#ded9cd;
-  --page-glow:rgba(28,99,83,.10);
+  --page-glow:rgba(100,80,116,.09);
+  --row-gray:#ada9a2;
+  --row-gray-deep:#a29e97;
+  --block-line:#a19c94;
+  --cat-divider:#6f6a63;
+  --table-border:#8f8a83;
   --amber:#b97a2b;
   --amber-soft:#f7ebd8;
   --danger:#b04c3f;
@@ -115,14 +120,17 @@ svg{display:block}
 .icon-btn.plain{background:transparent;border-color:transparent}
 /* Home */
 .home-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.header-actions{display:flex;align-items:center;gap:6px}
+.header-actions .icon-btn{width:40px;height:40px}
 .brand{display:flex;align-items:center;gap:11px;min-width:0}
 .brand-mark{
-  width:42px;height:42px;border-radius:14px;background:var(--accent);color:#f7f0df;
-  display:grid;place-items:center;font-size:22px;font-weight:800;letter-spacing:.01em;
+  position:relative;overflow:hidden;width:44px;height:44px;border-radius:14px;background:var(--accent);color:#f7f0df;
+  display:grid;place-items:center;
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.15),0 8px 18px var(--hero-shadow);
 }
-.brand-name{font-size:17px;font-weight:750;letter-spacing:.03em;line-height:1.2}
-.brand-sub{font-size:11px;color:var(--muted);letter-spacing:.11em;margin-top:3px}
+.brand-logo{width:36px;height:36px;display:block;color:#f7f0df}
+.brand-name{font-size:18px;font-weight:760;letter-spacing:.03em;line-height:1.2}
+.brand-sub{font-size:10px;color:var(--muted);letter-spacing:.14em;margin-top:2px}
 .home-hero{
   position:relative;overflow:hidden;border-radius:28px;padding:25px 23px 23px;
   background:
@@ -214,7 +222,7 @@ svg{display:block}
 .project-heading{flex:1;min-width:0;text-align:center;padding:0 2px}
 .project-kicker{font-size:10px;letter-spacing:.12em;color:var(--muted);font-weight:650;display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:1px}
 .project-title{font-size:16.5px;font-weight:750;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.project-main{padding:4px 18px calc(104px + var(--safe-bottom))}
+.project-main{padding:4px 18px calc(42px + var(--safe-bottom))}
 .main-section{margin-top:26px;scroll-margin-top:calc(72px + var(--safe-top))}
 .quick-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}
 .quick-nav button{
@@ -259,25 +267,25 @@ svg{display:block}
 .ledger-detail-summary{display:flex;justify-content:space-between;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:13px;font-size:10.5px;color:var(--muted)}
 .ledger-detail-summary strong{font-size:12px;color:var(--ink);font-variant-numeric:tabular-nums}
 /* detailed ledger table */
-.table-topbar{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin:0 1px 9px}
+.table-topbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 1px 9px}
 .table-caption{min-width:0}
 .table-caption strong{display:block;font-size:17px;font-weight:760;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
 .table-caption span{display:block;font-size:9px;color:var(--muted);margin-top:3px;line-height:1.4}
-.table-add{display:inline-flex;align-items:center;gap:4px;min-height:34px;padding:0 10px;border-radius:9px;background:var(--ink);color:#f8f2e5;font-size:10.5px;font-weight:700;white-space:nowrap;flex:0 0 auto}
+.table-add{display:inline-flex;align-items:center;gap:4px;min-height:32px;padding:0 10px;border-radius:9px;background:var(--accent);color:#f8f2e5;font-size:11.5px;font-weight:750;white-space:nowrap;flex:0 0 auto;box-shadow:0 4px 10px var(--hero-shadow)}
 .table-add .icon{width:14px;height:14px}
-.exp-table-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.exp-table-card{background:var(--surface);border:2px solid var(--table-border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
 .exp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .exp-scroll::-webkit-scrollbar{display:none}
 .exp-table{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed;font-variant-numeric:tabular-nums}
 .exp-table th,.exp-table td{border-bottom:1px solid var(--line);padding:4px 1px;font-size:8px;line-height:1.3;vertical-align:middle;background:var(--surface);text-align:center;white-space:normal;word-break:break-word}
-.exp-table thead th{background:var(--surface-2);color:var(--muted);font-size:7.5px;font-weight:700;text-align:center;padding:5px 1px;line-height:1.25;white-space:normal}
+.exp-table thead th{background:var(--surface-2);color:var(--muted);font-size:7.5px;font-weight:700;text-align:center;padding:5px 1px;line-height:1.25;white-space:normal;border-bottom:1.5px solid var(--cat-divider)}
 .exp-table thead th.col-cat,.exp-table th.col-cat{position:sticky;left:0;z-index:3;background:var(--surface-2);width:auto;padding:4px 1px;text-align:center}
-.exp-table tbody th.col-cat{background:var(--surface);z-index:2;vertical-align:top;padding-top:6px}
+.exp-table tbody th.col-cat{background:var(--surface);z-index:2;vertical-align:middle;padding:4px 1px;border-bottom:1.5px solid var(--cat-divider)}
 .exp-table tfoot th.col-cat{vertical-align:middle}
-.exp-table .exp-cat-inner{display:flex;flex-direction:column;align-items:center;gap:1px}
-.exp-cat-icon{width:21px;height:21px;border-radius:6px;display:grid;place-items:center;color:var(--cat-color);background:var(--cat-soft)}
-.exp-cat-icon .icon{width:12px;height:12px}
-.exp-cat-label{font-size:7.5px;font-weight:750;color:var(--ink-soft);line-height:1.1;white-space:nowrap}
+.exp-table .exp-cat-inner{display:flex;flex-direction:column;align-items:center;gap:3px}
+.exp-cat-icon{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;color:var(--accent);background:var(--accent-soft)}
+.exp-cat-icon .icon{width:11px;height:11px}
+.exp-cat-label{font-size:7.5px;font-weight:800;color:var(--ink);line-height:1.1;white-space:nowrap}
 .exp-row{cursor:pointer}
 .exp-row:active td,.exp-row:active th{background:var(--accent-soft)}
 .exp-row.settled td,.exp-row.settled th{background:#f2f1ed;color:var(--muted)}
@@ -285,30 +293,43 @@ svg{display:block}
 .exp-row.settled .pay-cell{background:#e8e6e0!important;color:#7b837d!important;filter:none}
 .exp-time{color:var(--muted);white-space:normal;word-break:break-word;font-size:7px;line-height:1.25}
 .exp-content{color:var(--ink-soft);line-height:1.25;font-size:8px;font-weight:750;word-break:break-word}
-.exp-detail-cell{color:var(--ink-soft);line-height:1.3;font-size:7.5px;word-break:break-word}
+.exp-detail-cell{color:var(--ink-soft);line-height:1.3;font-size:7.5px;word-break:break-word;white-space:pre-line}
 .exp-table .exp-time,.exp-table .exp-content,.exp-table .exp-detail-cell{text-align:left;padding-left:0;padding-right:0}
 .exp-table .exp-time{text-align:center}
 .exp-table .exp-content{text-align:center}
 .exp-detail-cell .receipt-mini{display:inline-flex;vertical-align:-2px;margin-left:2px;color:var(--accent)}
 .exp-detail-cell .receipt-mini .icon{width:10px;height:10px}
-.exp-table .pay-cell{text-align:center;font-weight:760;font-size:8.5px;line-height:1.3;white-space:nowrap;padding:4px 1px}
-.exp-table .member-amount{text-align:center;font-size:7.5px;color:var(--ink-soft);white-space:nowrap;padding:4px 0}
+.exp-table .pay-cell{text-align:center;font-weight:500;font-size:7.5px;line-height:1.3;white-space:nowrap;padding:4px 1px}
+.exp-table .member-amount{text-align:center;font-weight:500;font-size:7.5px;color:var(--ink-soft);white-space:nowrap;padding:4px 0}
 .exp-table .zero-amount{color:#c0c5c0}
-.exp-note{font-size:7.5px;line-height:1.35;color:var(--muted);text-align:left;white-space:normal;word-break:break-word}
+.exp-note{font-size:7.5px;line-height:1.35;color:var(--ink-soft);text-align:left;white-space:normal;word-break:break-word}
 .exp-note .settled-word{color:var(--muted);font-weight:700}
 .exp-note .reimburse-mark{color:var(--accent);font-size:7px}
 .member-bar{display:flex;align-items:center;justify-content:center;width:100%;min-height:19px;border-radius:4px;font-size:8px;font-weight:800;line-height:1;padding:2px 1px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.exp-table .subtotal-row th,.exp-table .subtotal-row td{background:var(--surface-2);font-weight:730;color:var(--ink-soft)}
-.exp-table .subtotal-label,.exp-table .total-label,.exp-table .transfer-label{text-align:center;color:var(--muted);font-weight:650;font-size:7px;white-space:normal;padding:4px 1px}
+.exp-table .subtotal-row td{background:var(--surface);font-weight:500;color:var(--ink);border-bottom:1.5px solid var(--cat-divider)}
+.exp-table .subtotal-word{text-align:center;font-weight:800;font-size:8px;color:var(--ink);white-space:nowrap;padding:4px 0}
+.exp-table .subtotal-label,.exp-table .total-label,.exp-table .transfer-label{text-align:left;color:var(--ink);font-weight:650;font-size:7.5px;white-space:normal;padding:4px 1px}
 .exp-table .transfer-label{text-align:left;padding-left:0;padding-right:0}
 .exp-table .sigma{font-size:9px;color:var(--muted)}
-.exp-table .subtotal-amount{text-align:center;font-weight:780;white-space:nowrap;font-size:8px;padding:4px 1px}
-.exp-table .total-row th,.exp-table .total-row td{background:var(--accent-soft);font-weight:780;color:var(--ink);border-bottom:1px solid var(--line)}
-.exp-table .total-row .col-cat,.exp-table .total-row .total-label{background:var(--accent-soft)}
+.exp-table .subtotal-amount{text-align:center;font-weight:800;white-space:nowrap;font-size:8px;padding:4px 1px;background:var(--surface)!important}
+.exp-table .subtotal-row .subtotal-word,.exp-table .subtotal-row .subtotal-amount{font-weight:800}
+.exp-table .subtotal-row .member-amount{font-weight:700}
+.exp-table .total-row td{background:var(--surface);font-weight:500;color:var(--ink);border-bottom:1px solid var(--block-line)}
+.exp-table .total-row .total-word,.exp-table .total-row .total-amount{font-weight:800}
+.exp-table .total-row .member-amount{font-weight:700}
+.exp-table .total-amount{font-weight:800}
+.exp-table .total-label{text-align:left;font-weight:780}
+.exp-table .total-word,.exp-table .transfer-word{text-align:center;font-weight:780;font-size:8.5px;color:var(--ink)}
+.exp-table .transfer-label{font-weight:400}
+.category-summary{text-align:left!important;padding-left:2px!important;font-size:8px;font-weight:780;color:var(--ink);white-space:nowrap}
+.cat-summary-icon{display:inline-grid;place-items:center;width:21px;height:21px;border-radius:6px;color:var(--accent);background:var(--accent-soft);vertical-align:middle;margin-right:5px}
+.cat-summary-icon .icon{width:12px;height:12px}
+.exp-table .no-payer{background:transparent!important;color:var(--ink)!important;font-weight:500}
+.exp-note-text{color:var(--ink-soft);font-size:7.5px}
 .exp-table .transfer-row{cursor:pointer}
 .exp-table .transfer-row th,.exp-table .transfer-row td{background:#f6f3ea;border-bottom:0}
 .exp-table .transfer-row .col-cat{background:#f6f3ea}
-.exp-table .transfer-net{text-align:center;font-weight:760;font-size:7.5px;white-space:nowrap;padding:4px 0}
+.exp-table .transfer-net{text-align:center;font-weight:700;font-size:7.5px;white-space:nowrap;padding:4px 0}
 .transfer-net.pos{color:var(--accent)}
 .transfer-net.neg{color:var(--danger)}
 .transfer-net.zero{color:var(--muted);font-weight:500}
@@ -416,6 +437,18 @@ svg{display:block}
 .bg-thumb.mist{background:linear-gradient(135deg,#edf1ef,#d6dfda)}
 .bg-thumb.cream{background:linear-gradient(135deg,#f7f0e4,#e8d9c5)}
 .bg-thumb.white{background:linear-gradient(135deg,#ffffff,#e8e8e3)}
+.option-edit-group{margin-top:12px}
+.option-edit-label{font-size:10px;font-weight:750;color:var(--muted);margin-bottom:6px}
+.option-edit-list{display:grid;gap:7px}
+.option-edit-row{display:flex;align-items:center;gap:7px}
+.option-edit-swatch{width:18px;height:18px;border-radius:5px;flex:0 0 18px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.option-edit-name{flex:1;min-width:0;padding:8px 9px;font-size:11.5px}
+.option-edit-color{width:30px;height:30px;flex:0 0 30px;padding:0;border:1px solid var(--line);border-radius:7px;background:transparent;overflow:hidden;cursor:pointer}
+.subcat-edit-list{display:grid;gap:7px;margin-bottom:9px}
+.subcat-edit-row{display:flex;align-items:center;gap:6px}
+.subcat-edit-input{flex:1;min-width:0;padding:9px 10px;font-size:12.5px}
+.subcat-remove{width:30px;height:30px;flex:0 0 30px;border-radius:8px;display:grid;place-items:center;color:var(--muted);background:var(--surface-2)}
+.subcat-remove .icon{width:14px;height:14px}
 .hero-preview{
   height:88px;border-radius:14px;background:linear-gradient(145deg,var(--hero-a),var(--hero-b));color:#f8f2e5;
   padding:12px 13px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;
@@ -706,14 +739,14 @@ body.sheet-open{overflow:hidden}
 .np-member-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .color-dot{width:13px;height:13px;border-radius:4px;flex:0 0 auto;box-shadow:0 0 0 3px rgba(255,255,255,.66)}
 .np-member-row .input{flex:1;font-size:14px;padding:11px 11px;min-width:0}
-.np-member-row .np-code{flex:0 0 58px;width:58px;text-align:center;text-transform:uppercase;padding-left:4px;padding-right:4px;font-weight:700}
-.np-color{
-  width:36px;height:36px;padding:0;border:1px solid var(--line);border-radius:9px;background:transparent;
-  flex:0 0 36px;appearance:none;-webkit-appearance:none;overflow:hidden;cursor:pointer;
+.np-color-block{
+  position:relative;width:38px;height:38px;flex:0 0 38px;border-radius:10px;display:grid;place-items:center;
+  overflow:hidden;cursor:pointer;border:1px solid rgba(23,51,43,.14);font-size:14px;font-weight:800;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25);
 }
-.np-color::-webkit-color-swatch-wrapper{padding:0}
-.np-color::-webkit-color-swatch{border:0;border-radius:8px}
-.np-color::-moz-color-swatch{border:0;border-radius:8px}
+.np-color-block .np-code-preview{pointer-events:none;line-height:1}
+.np-color-block .np-color{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;opacity:0;cursor:pointer}
+.member-color-input{width:36px;height:36px;padding:0;border:1px solid var(--line);border-radius:9px;background:transparent;appearance:none;-webkit-appearance:none;overflow:hidden;cursor:pointer}
 .palette-quick{display:flex;align-items:center;gap:7px;margin:2px 0 7px}
 .palette-quick span{font-size:9px;color:var(--muted);margin-right:2px}
 .palette-quick button{min-height:27px;padding:0 9px;border-radius:7px;border:1px solid var(--line);background:var(--surface);font-size:9px;color:var(--ink-soft);font-weight:650}
@@ -741,7 +774,7 @@ body.sheet-open{overflow:hidden}
 }
 .category-btn .icon{width:21px;height:21px}
 .category-btn.on{color:var(--cat-color);background:var(--cat-soft);border-color:transparent;box-shadow:inset 0 0 0 1px rgba(23,51,43,.05)}
-.subchips{display:flex;gap:6px;overflow-x:auto;padding:1px 0 5px;scrollbar-width:none}
+.subchips{display:flex;flex-wrap:wrap;gap:6px;overflow:visible;padding:1px 0 5px}
 .subchips::-webkit-scrollbar{display:none}
 .subchip{flex:0 0 auto;min-height:30px;padding:0 11px;border-radius:9px;border:1px solid var(--line);font-size:11px;color:var(--ink-soft);background:rgba(255,255,255,.45)}
 .subchip.on{background:var(--ink);border-color:var(--ink);color:#fff}
@@ -757,6 +790,10 @@ body.sheet-open{overflow:hidden}
 .member-chip.on{border-color:var(--ink);background:var(--surface);box-shadow:0 2px 8px rgba(23,51,43,.06)}
 .member-chip .tick{width:14px;height:14px;display:none;color:var(--accent)}
 .member-chip.on .tick{display:block}
+.payer-member-chip{min-width:46px;justify-content:center;padding:5px 8px}
+.avatar-external{background:#c9c6c0!important;color:#343a36!important}
+.external-chip .external-label{font-size:10px;color:var(--ink-soft)}
+.segmented.five .seg-btn{font-size:9.5px;padding:0 2px;min-width:0}
 .split-section{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:14px}
 .split-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
 .split-title{font-size:11.5px;font-weight:650;color:var(--ink-soft)}
@@ -874,9 +911,9 @@ body.sheet-open{overflow:hidden}
   <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 9.5h17"/></symbol>
   <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 20c.4-3.4 2.8-5.4 6.2-5.4s5.8 2 6.2 5.4"/><path d="M16 5.3a3 3 0 0 1 0 5.6M17.5 14.8c2 .5 3.3 2.1 3.7 4.5"/></symbol>
   <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5Z"/></symbol>
-  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19v-9M3 14h18v5M21 19v-6a3 3 0 0 0-3-3h-7v4M3 11h5a2 2 0 0 1 2 2v1"/><circle cx="7" cy="8.5" r="2"/></symbol>
-  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 6h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4V6Z"/><path d="M14 6v2M14 11v2M14 16v2"/></symbol>
-  <symbol id="i-food" viewBox="0 0 24 24"><path d="M7 3v8M4 3v4a3 3 0 0 0 6 0V3M7 11v10M16 3c-1.8 2-2.5 4-2.5 6.5A3.5 3.5 0 0 0 17 13h.5v8"/><path d="M17 13V3c2 0 3 2 3 5v5h-3Z"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.2V20h13V9.2"/><path d="M7.5 20v-3.8h9V20"/><path d="M7.5 16.2h9"/><circle cx="10" cy="13.8" r="1.1"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><circle cx="17.8" cy="6.3" r="2"/><path d="M2.2 19.6 8.7 9.8l4 5.5 2.2-3 6.9 7.3H2.2Z"/><path d="M6.7 12.9 8.7 15.3l2-2.7"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24"><path d="M3.5 11.5h17a8.5 8.5 0 0 1-17 0Z"/><path d="M3 11.5h18"/><path d="M8 11.5c.9-1.8 2.2-2.7 4-2.7s3.1.9 4 2.7"/><path d="M14.1 3 9.7 11.5M16.5 3.2 12.1 11.5"/></symbol>
   <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></symbol>
   <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 15h10l1-15M10 11v6M14 11v6"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
@@ -891,6 +928,8 @@ body.sheet-open{overflow:hidden}
   <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M16 15h2"/></symbol>
   <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.7 5.2L19 10l-5.3 1.8L12 17l-1.7-5.2L5 10l5.3-1.8L12 3Z"/><path d="M19 16l.7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 6.2A10.6 10.6 0 0 1 12 6c6.5 0 10 6 10 6a17 17 0 0 1-3.1 3.7M6.2 6.3A17 17 0 0 0 2 12s3.5 6 10 6a10.7 10.7 0 0 0 4.1-.8"/><path d="M9.7 9.7a3.2 3.2 0 0 0 4.6 4.6"/></symbol>
 </svg>
 
 <div id="app" class="app-shell"></div>
@@ -958,14 +997,15 @@ function isImageDataUrl(value, maxLength) {
 }
 
 const WEEKDAYS = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-const SPLIT_LABELS = { equal: '均分', weights: '按份数', amounts: '指定金额', personal: '个人承担' };
+const SPLIT_LABELS = { equal: '均分', weights: '按份数', amounts: '指定金额', personal: '个人承担', none: '无需分摊' };
+const EXTERNAL_PAYER_ID = 'external';
 
 const DEFAULT_APP_SETTINGS = {
-  theme: 'forest',
+  theme: 'plum',
   background: 'paper',
-  heroKicker: '共同出行 · 轻松分账',
-  heroTitle: '一起出发，\n花得明白。',
-  heroCopy: '交通、住宿、景点、餐饮和其他花销，记一笔，自动算出最后该怎么分。',
+  heroKicker: '同程同享 · 轻松分账',
+  heroTitle: 'Enjoy the journey,\nshare the expense.',
+  heroCopy: '享受旅程美好，轻松把控开支。',
   heroImage: ''
 };
 const THEME_OPTIONS = [
@@ -975,11 +1015,31 @@ const THEME_OPTIONS = [
   { key: 'plum', label: '梅子紫', color: '#645074', deep: '#473650', soft: '#efe9f2' }
 ];
 const BACKGROUND_OPTIONS = [
-  { key: 'paper', label: '米纸' },
-  { key: 'mist', label: '雾白' },
-  { key: 'cream', label: '暖砂' },
-  { key: 'white', label: '纯白' }
+  { key: 'paper', label: '米纸', color: '#f4f1ea' },
+  { key: 'mist', label: '雾白', color: '#edf1ef' },
+  { key: 'cream', label: '暖砂', color: '#f7f0e4' },
+  { key: 'white', label: '纯白', color: '#fbfaf7' }
 ];
+const INLINE_APPEARANCE_VARS = [
+  '--accent', '--accent-deep', '--accent-soft', '--hero-a', '--hero-b', '--hero-c', '--hero-glow', '--hero-shadow', '--page-glow',
+  '--bg', '--bg-deep', '--surface', '--surface-2', '--page-bg'
+];
+function isHexColor(value) {
+  return /^#[0-9a-f]{6}$/i.test(String(value || ''));
+}
+function hexToRgb(hex) {
+  const value = String(hex || '').replace('#', '');
+  if (!/^[0-9a-f]{6}$/i.test(value)) return [0, 0, 0];
+  return [parseInt(value.slice(0, 2), 16), parseInt(value.slice(2, 4), 16), parseInt(value.slice(4, 6), 16)];
+}
+function mixHex(a, b, ratio) {
+  const x = hexToRgb(a), y = hexToRgb(b), t = Math.max(0, Math.min(1, Number(ratio) || 0));
+  return '#' + x.map((v, i) => Math.round(v + (y[i] - v) * t).toString(16).padStart(2, '0')).join('');
+}
+function hexToRgba(hex, alpha) {
+  const rgb = hexToRgb(hex);
+  return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + Math.max(0, Math.min(1, alpha)) + ')';
+}
 
 function normalizeAppSettings(raw) {
   const s = raw && typeof raw === 'object' ? raw : {};
@@ -993,22 +1053,72 @@ function normalizeAppSettings(raw) {
     /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(s.heroImage) &&
     s.heroImage.length < 1800000
     ? s.heroImage : '';
+  let copy = cleanText(s.heroCopy, DEFAULT_APP_SETTINGS.heroCopy, 120);
+  if (copy === '享受旅程的美好，轻松把控开支。' || copy === '享受旅程，轻松把控开支。') copy = DEFAULT_APP_SETTINGS.heroCopy;
+  const savedThemes = Array.isArray(s.themeOptions) ? s.themeOptions : [];
+  const savedBgs = Array.isArray(s.bgOptions) ? s.bgOptions : [];
+  const themeOptions = THEME_OPTIONS.map(def => {
+    const raw = savedThemes.find(item => item && item.key === def.key) || {};
+    const color = isHexColor(raw.color) ? raw.color.toLowerCase() : def.color;
+    return {
+      key: def.key,
+      label: cleanText(raw.label, def.label, 10),
+      color,
+      deep: mixHex(color, '#000000', 0.28),
+      soft: mixHex(color, '#ffffff', 0.86),
+      custom: isHexColor(raw.color) && color !== def.color
+    };
+  });
+  const bgOptions = BACKGROUND_OPTIONS.map(def => {
+    const raw = savedBgs.find(item => item && item.key === def.key) || {};
+    const color = isHexColor(raw.color) ? raw.color.toLowerCase() : def.color;
+    return {
+      key: def.key,
+      label: cleanText(raw.label, def.label, 10),
+      color,
+      custom: isHexColor(raw.color) && color !== def.color
+    };
+  });
   return {
     theme,
     background,
+    themeOptions,
+    bgOptions,
     heroKicker: cleanText(s.heroKicker, DEFAULT_APP_SETTINGS.heroKicker, 24),
     heroTitle: cleanText(s.heroTitle, DEFAULT_APP_SETTINGS.heroTitle, 50),
-    heroCopy: cleanText(s.heroCopy, DEFAULT_APP_SETTINGS.heroCopy, 120),
+    heroCopy: copy,
     heroImage: image
   };
 }
 
 function applyAppearance() {
   const settings = normalizeAppSettings(db.settings);
-  document.documentElement.dataset.theme = settings.theme;
-  document.documentElement.dataset.bg = settings.background;
+  const root = document.documentElement;
+  INLINE_APPEARANCE_VARS.forEach(name => root.style.removeProperty(name));
+  root.dataset.theme = settings.theme;
+  root.dataset.bg = settings.background;
+  const theme = settings.themeOptions.find(item => item.key === settings.theme);
+  if (theme && theme.custom) {
+    root.style.setProperty('--accent', theme.color);
+    root.style.setProperty('--accent-deep', theme.deep);
+    root.style.setProperty('--accent-soft', theme.soft);
+    root.style.setProperty('--hero-a', mixHex(theme.color, '#ffffff', 0.05));
+    root.style.setProperty('--hero-b', theme.deep);
+    root.style.setProperty('--hero-c', mixHex(theme.color, '#000000', 0.40));
+    root.style.setProperty('--hero-glow', hexToRgba(theme.color, 0.30));
+    root.style.setProperty('--hero-shadow', hexToRgba(theme.deep, 0.22));
+    root.style.setProperty('--page-glow', hexToRgba(theme.color, 0.09));
+  }
+  const bg = settings.bgOptions.find(item => item.key === settings.background);
+  if (bg && bg.custom) {
+    root.style.setProperty('--bg', bg.color);
+    root.style.setProperty('--bg-deep', mixHex(bg.color, '#000000', 0.08));
+    root.style.setProperty('--surface', mixHex(bg.color, '#ffffff', 0.78));
+    root.style.setProperty('--surface-2', mixHex(bg.color, '#ffffff', 0.56));
+    root.style.setProperty('--page-bg', mixHex(bg.color, '#000000', 0.12));
+  }
   try {
-    const computed = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+    const computed = getComputedStyle(root).getPropertyValue('--bg').trim();
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta && computed) meta.setAttribute('content', computed);
   } catch (_) { /* ignore */ }
@@ -1044,8 +1154,9 @@ function initialOf(name) {
 }
 
 function memberCode(member) {
-  const code = member && String(member.code || '').trim().slice(0, 2);
-  return code || initialOf(member ? member.name : '?');
+  const initial = initialOf(member ? member.name : '?');
+  if (initial && initial !== '?') return initial;
+  return member && String(member.code || '').trim().slice(0, 2) || '?';
 }
 
 function memberAvatar(member, extra = '') {
@@ -1056,12 +1167,17 @@ function memberAvatar(member, extra = '') {
 function catMeta(key) {
   return CATEGORIES[key] || CATEGORIES.other;
 }
+function projectSubs(project, key) {
+  const list = project && project.subcategories && project.subcategories[key];
+  return Array.isArray(list) && list.length ? list : catMeta(key).subs;
+}
 
 function catStyle(cat) {
   return '--cat-color:' + cat.color + ';--cat-soft:' + cat.soft + ';';
 }
 
-function money(cents, withSymbol = true) {
+function money(cents, withSymbol = true, forceVisible = false) {
+  if (!forceVisible && typeof ui !== 'undefined' && ui.privacyHidden) return '***';
   const value = Math.round(Number(cents || 0));
   const sign = value < 0 ? '-' : '';
   const abs = Math.abs(value);
@@ -1073,7 +1189,12 @@ function money(cents, withSymbol = true) {
 function yuanFixed(cents) {
   return (Number(cents || 0) / 100).toFixed(2);
 }
-function tableMoney(cents) {
+function privacyText(value) {
+  return typeof ui !== 'undefined' && ui.privacyHidden ? '***' : value;
+}
+
+function tableMoney(cents, forceVisible = false) {
+  if (!forceVisible && typeof ui !== 'undefined' && ui.privacyHidden) return '***';
   const value = Math.round(Number(cents) || 0);
   const sign = value < 0 ? '-' : '';
   const abs = Math.abs(value);
@@ -1175,6 +1296,11 @@ function shortDateDash(iso) {
   if (!dt) return '';
   return String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
 }
+function shortDateDigits(iso) {
+  const dt = parseISO(iso);
+  if (!dt) return '';
+  return String(dt.getMonth() + 1).padStart(2, '0') + String(dt.getDate()).padStart(2, '0');
+}
 function rangeLabel(start, end) {
   const a = parseISO(start), b = parseISO(end);
   if (!a && !b) return '未设置日期';
@@ -1268,6 +1394,18 @@ function makeMember(name, color, id, code) {
   };
 }
 
+function normalizeSubcategories(raw) {
+  const source = raw && typeof raw === 'object' ? raw : {};
+  const result = {};
+  CAT_ORDER.forEach(key => {
+    const values = Array.isArray(source[key]) ? source[key] : CATEGORIES[key].subs;
+    const cleaned = values.map(value => String(value || '').trim().slice(0, 20)).filter(Boolean);
+    const unique = Array.from(new Set(cleaned)).slice(0, 30);
+    result[key] = unique.length ? unique : CATEGORIES[key].subs.slice();
+  });
+  return result;
+}
+
 function normalizeProject(raw) {
   const p = raw && typeof raw === 'object' ? raw : {};
   let members = Array.isArray(p.members) ? p.members.slice(0, 10).map((m, i) => {
@@ -1288,7 +1426,8 @@ function normalizeProject(raw) {
   const startDate = parseISO(p.startDate) ? p.startDate : todayISO();
   let endDate = parseISO(p.endDate) ? p.endDate : addDaysISO(startDate, 2);
   if (endDate < startDate) endDate = startDate;
-  const expenses = (Array.isArray(p.expenses) ? p.expenses : []).map((rawExp, index) => normalizeExpense(rawExp, members, memberIds, startDate, index));
+  const subcategories = normalizeSubcategories(p.subcategories);
+  const expenses = (Array.isArray(p.expenses) ? p.expenses : []).map((rawExp, index) => normalizeExpense(rawExp, members, memberIds, startDate, index, subcategories));
   const limits = (Array.isArray(p.limits) ? p.limits : []).map(normalizeLimit).filter(Boolean);
   const budgets = normalizeBudgets(p.budgets);
   const settlements = (Array.isArray(p.settlements) ? p.settlements : []).map(normalizeSettlement).filter(Boolean);
@@ -1303,6 +1442,7 @@ function normalizeProject(raw) {
     endDate,
     note: String(p.note || '').slice(0, 300),
     members,
+    subcategories,
     expenses,
     limits,
     budgets,
@@ -1312,10 +1452,12 @@ function normalizeProject(raw) {
   };
 }
 
-function normalizeExpense(raw, members, memberIds, fallbackDate, index) {
+function normalizeExpense(raw, members, memberIds, fallbackDate, index, subcategories) {
   const e = raw && typeof raw === 'object' ? raw : {};
   const category = CATEGORIES[e.category] ? e.category : 'other';
-  const subs = CATEGORIES[category].subs;
+  const subs = (subcategories && Array.isArray(subcategories[category]) && subcategories[category].length)
+    ? subcategories[category]
+    : CATEGORIES[category].subs;
   const participants = Array.isArray(e.participants)
     ? Array.from(new Set(e.participants.map(String).filter(id => memberIds.has(id))))
     : [];
@@ -1342,14 +1484,16 @@ function normalizeExpense(raw, members, memberIds, fallbackDate, index) {
     });
   }
   const payerId = String(e.payerId || '');
+  const isExternal = payerId === EXTERNAL_PAYER_ID;
   return {
     id: safeId(e.id, 'e'),
     date: parseISO(e.date) ? e.date : fallbackDate,
-    payerId: memberIds.has(payerId) ? payerId : members[0].id,
+    payerId: isExternal ? EXTERNAL_PAYER_ID : (memberIds.has(payerId) ? payerId : members[0].id),
     category,
     subcategory: subs.includes(e.subcategory) ? e.subcategory : subs[0],
     title: String(e.title || '').slice(0, 60),
     detail: String(e.detail || '').slice(0, 200),
+    amountExpression: String(e.amountExpression || '').slice(0, 80),
     amountCents,
     splitMode: SPLIT_LABELS[e.splitMode] ? e.splitMode : 'equal',
     participants,
@@ -1465,6 +1609,9 @@ function splitWeightedCents(total, ids, weights) {
 }
 
 function computeExpenseShares(project, expense) {
+  const zero = {};
+  project.members.forEach(m => { zero[m.id] = 0; });
+  if (expense.splitMode === 'none' || expense.payerId === EXTERNAL_PAYER_ID) return zero;
   const total = Math.max(0, Math.round(expense.amountCents || 0));
   let ids = (expense.participants || []).filter(id => findMember(project, id));
   if (!ids.length) ids = project.members.map(m => m.id);
@@ -1518,7 +1665,7 @@ function computeMemberTotals(project, expenseList) {
 function computeProjectStats(project) {
   const expenses = project.expenses;
   const totalCents = expenses.reduce((sum, e) => sum + e.amountCents, 0);
-  const unsettled = expenses.filter(e => !e.settled);
+  const unsettled = expenses.filter(e => !e.settled && needsSettlement(e));
   const unsettledCents = unsettled.reduce((sum, e) => sum + e.amountCents, 0);
   const pendingSummary = computeMemberTotals(project, unsettled);
   const pendingTransferCents = pendingSummary.reduce((sum, row) => sum + Math.max(0, row.netCents), 0);
@@ -1662,7 +1809,7 @@ function limitTitle(limit) {
 }
 
 /* ---------- 路由与界面状态 ---------- */
-const ui = { ledgerFilter: 'all' };
+const ui = { ledgerFilter: 'all', privacyHidden: false };
 let currentProjectId = null;
 let activeSheet = null;
 
@@ -1708,8 +1855,14 @@ function sortExpensesAsc(list) {
   });
 }
 
+function needsSettlement(expense) {
+  return expense.payerId !== EXTERNAL_PAYER_ID && expense.splitMode !== 'none';
+}
+
 function tableSplitNote(project, expense) {
   const participants = expense.participants.map(id => findMember(project, id)).filter(Boolean);
+  if (expense.splitMode === 'none') return expense.payerId === EXTERNAL_PAYER_ID ? '其他支付 · 无需分摊' : '无需分摊';
+  if (expense.payerId === EXTERNAL_PAYER_ID) return '其他支付 · 无需分摊';
   if (expense.splitMode === 'personal') {
     const member = participants[0];
     return (member ? memberCode(member) : '—') + ' 个人';
@@ -1730,6 +1883,7 @@ function tableSplitNote(project, expense) {
 }
 
 function avatarStack(project, max = 4) {
+  if (ui.privacyHidden) return '';
   const shown = project.members.slice(0, max);
   const rest = project.members.length - shown.length;
   return shown.map(m => memberAvatar(m, 'sm')).join('') +
@@ -1769,17 +1923,12 @@ function expenseItemHTML(project, expense) {
 function projectCardHTML(project) {
   const stats = computeProjectStats(project);
   const status = projectStatus(project);
-  const stripe = CAT_ORDER.map(key => {
-    const cents = stats.byCategory[key].cents;
-    if (!cents) return '';
-    const pct = stats.totalCents ? (cents / stats.totalCents * 100) : 0;
-    return '<span class="stripe-seg" style="width:' + pct.toFixed(2) + '%;background:' + catMeta(key).color + '"></span>';
-  }).join('');
+  const stripe = '<span class="stripe-seg" style="width:100%;background:var(--accent)"></span>';
   return '<button class="project-card ' + status.key + '" data-action="open-project" data-id="' + esc(project.id) + '">' +
     '<span class="pc-top"><span class="status-pill ' + status.key + '"><span class="dot"></span>' + status.label + '</span>' +
-      '<span class="pc-date">' + esc(updatedLabel(project.updatedAt)) + '</span></span>' +
-    '<span class="project-name">' + esc(project.name) + '</span>' +
-    '<span class="project-meta">' + esc(rangeLabel(project.startDate, project.endDate)) + '<span class="sep"></span>' + project.members.length + ' 人</span>' +
+      '<span class="pc-date">' + esc(privacyText(updatedLabel(project.updatedAt))) + '</span></span>' +
+    '<span class="project-name">' + esc(privacyText(project.name)) + '</span>' +
+    '<span class="project-meta">' + esc(privacyText(rangeLabel(project.startDate, project.endDate))) + '<span class="sep"></span>' + project.members.length + ' 人</span>' +
     '<span class="pc-bottom"><span class="avatar-stack">' + avatarStack(project, 4) + '</span>' +
       '<span class="pc-money"><span class="pc-total tnum">' + money(stats.totalCents) + '</span>' +
       '<span class="pc-pending">' + (stats.unsettledCount > 0
@@ -1808,7 +1957,7 @@ function renderApp() {
       currentProjectId = project.id;
       ui.ledgerFilter = 'all';
     }
-    document.title = project.name + ' · 乐享';
+    document.title = ui.privacyHidden ? '乐享' : project.name + ' · 乐享';
     renderProject(project);
     return;
   }
@@ -1828,10 +1977,21 @@ function renderHome() {
     : '';
   app.innerHTML = '<div class="page home-page">' +
     '<header class="home-top">' +
-      '<div class="brand"><div class="brand-mark">S</div><div>' +
-        '<div class="brand-name">乐享</div><div class="brand-sub">SHARE · 一起出发</div>' +
+      '<div class="brand"><div class="brand-mark">' +
+        '<svg class="brand-logo" viewBox="0 0 512 512" aria-hidden="true">' +
+          '<g fill="none" stroke="#f8eddf" stroke-linecap="round" stroke-linejoin="round">' +
+            '<path d="M415 190 C408 122 337 82 255 88 C166 94 98 157 112 225 C124 286 205 307 268 304 C344 300 413 323 414 382 C415 451 333 490 250 490 C180 490 120 458 96 410" stroke-width="78" stroke-opacity=".08"/>' +
+            '<path d="M415 190 C408 122 337 82 255 88 C166 94 98 157 112 225 C124 286 205 307 268 304 C344 300 413 323 414 382 C415 451 333 490 250 490 C180 490 120 458 96 410" stroke-width="66" stroke-opacity=".16"/>' +
+            '<path d="M415 190 C408 122 337 82 255 88 C166 94 98 157 112 225 C124 286 205 307 268 304 C344 300 413 323 414 382 C415 451 333 490 250 490 C180 490 120 458 96 410" stroke-width="52"/>' +
+            '<path d="M338 123 L500 103M336 145 L500 126M12 430 L248 454M12 452 L244 476" stroke-width="3" stroke-opacity=".45"/>' +
+          '</g>' +
+        '</svg></div><div>' +
+        '<div class="brand-name">乐享</div><div class="brand-sub">SHARE</div>' +
       '</div></div>' +
-      '<button class="icon-btn" data-action="data-manager" aria-label="设置">' + icon('settings') + '</button>' +
+      '<div class="header-actions">' +
+        '<button class="icon-btn" data-action="toggle-privacy" aria-label="' + (ui.privacyHidden ? '显示金额和名称' : '隐藏金额和名称') + '">' + icon(ui.privacyHidden ? 'eye-off' : 'eye') + '</button>' +
+        '<button class="icon-btn" data-action="data-manager" aria-label="设置">' + icon('settings') + '</button>' +
+      '</div>' +
     '</header>' +
     '<section class="home-hero"' + heroStyle + '>' +
       '<div class="hero-kicker">' + esc(settings.heroKicker) + '</div>' +
@@ -1866,11 +2026,13 @@ function renderProject(project) {
     '<header class="project-header">' +
       '<button class="icon-btn" data-action="back-home" aria-label="返回项目列表">' + icon('back') + '</button>' +
       '<div class="project-heading"><div class="project-kicker">' + esc(status.label) + ' · ' + project.members.length + '人</div>' +
-        '<h1 class="project-title">' + esc(project.name) + '</h1></div>' +
-      '<button class="icon-btn" data-action="open-settings" aria-label="项目设置">' + icon('settings') + '</button>' +
+        '<h1 class="project-title">' + esc(privacyText(project.name)) + '</h1></div>' +
+      '<div class="header-actions">' +
+        '<button class="icon-btn" data-action="toggle-privacy" aria-label="' + (ui.privacyHidden ? '显示金额和名称' : '隐藏金额和名称') + '">' + icon(ui.privacyHidden ? 'eye-off' : 'eye') + '</button>' +
+        '<button class="icon-btn" data-action="open-settings" aria-label="项目设置">' + icon('settings') + '</button>' +
+      '</div>' +
     '</header>' +
-    '<main class="project-main">' + renderProjectMain(project) + '</main>' +
-    '<button class="fab solo" data-action="open-expense" aria-label="记一笔账">' + icon('plus') + '<span>记一笔</span></button>';
+    '<main class="project-main">' + renderProjectMain(project) + '</main>';
 }
 
 function renderProjectMain(project) {
@@ -1883,7 +2045,7 @@ function renderProjectMain(project) {
       icon('chevron', 'chev') + '</button>'
     : '';
   return '<div class="trip-meta">' +
-      '<div class="meta-left">' + icon('calendar') + '<span>' + esc(rangeLabel(project.startDate, project.endDate)) + '</span></div>' +
+      '<div class="meta-left">' + icon('calendar') + '<span>' + esc(privacyText(rangeLabel(project.startDate, project.endDate))) + '</span></div>' +
       '<div class="member-strip">' + avatarStack(project, 4) +
         '<button class="section-action" data-action="open-settings">' + project.members.length + '人' + icon('chevron', 'sm') + '</button>' +
       '</div>' +
@@ -1918,20 +2080,22 @@ function renderExpenseTable(project) {
   const members = project.members;
   const all = project.expenses;
   const wide = members.length > 4;
-  const topbar = '<div class="table-topbar"><div class="table-caption"><strong>' + esc(project.name) + '</strong>' +
+  const topbar = '<div class="table-topbar"><div class="table-caption"><strong>' + esc(privacyText(project.name)) + '</strong>' +
     '<span>' + all.length + ' 笔 · 点一行看凭证和分摊 · ' + (wide ? '左右滑动看更多成员' : '全部列已显示') + '</span></div>' +
     '<button class="table-add" data-action="open-expense">' + icon('plus') + '记一笔</button></div>';
   if (!all.length) {
     return topbar + '<div class="exp-table-card"><div class="exp-table-empty">还没有账目。点「记一笔」后，这里会按分类、时间和成员自动生成明细总表。</div></div>';
   }
-  const minWidth = 228 + members.length * 30;
-  const memberPct = (35 / members.length).toFixed(3);
+  const minWidth = 224 + members.length * 30;
+  const memberPct = (32 / members.length).toFixed(3);
   const colgroup = wide
-    ? '<colgroup><col style="width:34px"><col style="width:22px"><col style="width:36px"><col style="width:66px"><col style="width:34px">' +
+    ? '<colgroup><col style="width:30px"><col style="width:20px"><col style="width:32px"><col style="width:70px"><col style="width:36px">' +
       members.map(() => '<col style="width:30px">').join('') + '<col style="width:36px"></colgroup>'
-    : '<colgroup><col style="width:9.5%"><col style="width:5.8%"><col style="width:10.35%"><col style="width:19.85%"><col style="width:9.5%">' +
-      members.map(() => '<col style="width:' + memberPct + '%">').join('') + '<col style="width:10%"></colgroup>';
-  const headers = members.map(m => '<th scope="col"><span class="member-bar" style="background:' + esc(m.color) + ';color:' + contrastText(m.color) + '" title="' + esc(m.name) + '">' + esc(memberCode(m)) + '</span></th>').join('');
+    : '<colgroup><col style="width:8%"><col style="width:5.5%"><col style="width:9%"><col style="width:23%"><col style="width:11%">' +
+      members.map(() => '<col style="width:' + memberPct + '%">').join('') + '<col style="width:11.5%"></colgroup>';
+  const headers = members.map(m => ui.privacyHidden
+    ? '<th scope="col"></th>'
+    : '<th scope="col"><span class="member-bar" style="background:' + esc(m.color) + ';color:' + contrastText(m.color) + '" title="' + esc(m.name) + '">' + esc(memberCode(m)) + '</span></th>').join('');
   const memberGrand = {};
   members.forEach(m => { memberGrand[m.id] = 0; });
   let grandTotal = 0;
@@ -1942,16 +2106,15 @@ function renderExpenseTable(project) {
     const cat = catMeta(key);
     const catShares = {};
     members.forEach(m => { catShares[m.id] = 0; });
-    const payerSet = new Set();
     let catTotal = 0;
     const catRows = exps.length + 1;
     exps.forEach((exp, index) => {
       const shares = computeExpenseShares(project, exp);
+      const external = exp.payerId === EXTERNAL_PAYER_ID;
+      const noPayer = external || exp.splitMode === 'none';
       const payer = findMember(project, exp.payerId);
-      const payerColor = payer ? payer.color : '#999999';
-      const payerText = contrastText(payerColor);
+      const payerColor = payer ? payer.color : '';
       catTotal += exp.amountCents;
-      payerSet.add(exp.payerId);
       members.forEach(m => {
         catShares[m.id] += shares[m.id] || 0;
         memberGrand[m.id] += shares[m.id] || 0;
@@ -1959,35 +2122,35 @@ function renderExpenseTable(project) {
       const detailParts = [];
       if (exp.title && exp.title !== exp.subcategory) detailParts.push(exp.title);
       if (exp.detail) detailParts.push(exp.detail);
-      let note = esc(tableSplitNote(project, exp));
-      if (exp.reimburseDate) note += '<br><span class="reimburse-mark">报销 ' + shortDateDash(exp.reimburseDate) + '</span>';
+      let note = ui.privacyHidden ? (noPayer ? '无需分摊' : '已分摊') : esc(tableSplitNote(project, exp));
+      if (exp.note) note += '<br><span class="exp-note-text">' + esc(exp.note) + '</span>';
       if (exp.settled) note += '<br><span class="settled-word">已结清</span>';
+      const hidePayer = ui.privacyHidden;
+      const payStyle = (noPayer || hidePayer) ? '' : 'background:' + esc(payerColor) + ';color:' + contrastText(payerColor);
       const categoryCell = index === 0
-        ? '<th scope="rowgroup" rowspan="' + catRows + '" class="col-cat"><span class="exp-cat-inner"><span class="exp-cat-icon" style="' + catStyle(cat) + '">' + icon(cat.icon) + '</span><span class="exp-cat-label">' + cat.label + '</span></span></th>'
+        ? '<th scope="rowgroup" rowspan="' + catRows + '" class="col-cat"><span class="exp-cat-inner"><span class="exp-cat-icon">' + icon(cat.icon) + '</span><span class="exp-cat-label">' + cat.label + '</span></span></th>'
         : '';
-      body += '<tr class="exp-row ' + (exp.settled ? 'settled' : '') + '" data-action="open-expense-detail" data-id="' + esc(exp.id) + '" title="点按查看支付清单与完整分摊">' +
+      body += '<tr class="exp-row ' + (index === 0 ? 'cat-first ' : '') + (exp.settled ? 'settled' : '') + '" data-action="open-expense-detail" data-id="' + esc(exp.id) + '" title="点按查看支付清单与完整分摊">' +
         categoryCell +
-        '<td class="exp-time">' + shortDateDash(exp.date) + '</td>' +
+        '<td class="exp-time">' + (ui.privacyHidden ? '***' : shortDateDigits(exp.date)) + '</td>' +
         '<td class="exp-content">' + esc(exp.subcategory) + '</td>' +
         '<td class="exp-detail-cell">' + (detailParts.length ? esc(detailParts.join('；')) : '<span class="zero-amount">—</span>') +
           (exp.receipt ? '<span class="receipt-mini" title="有支付清单">' + icon('receipt') + '</span>' : '') + '</td>' +
-        '<td class="pay-cell" style="background:' + esc(payerColor) + ';color:' + payerText + '" title="付款人：' + esc(payer ? payer.name : '未知') + '">' + tableMoney(exp.amountCents) + '</td>' +
+        '<td class="pay-cell' + ((noPayer || hidePayer) ? ' no-payer' : '') + '"' + (payStyle ? ' style="' + payStyle + '"' : '') + ' title="暂付款方：' + esc(ui.privacyHidden ? '已隐藏' : (external ? '其他' : (payer ? payer.name : '未知'))) + '">' + tableMoney(exp.amountCents) + '</td>' +
         members.map(m => '<td class="member-amount">' + (shares[m.id] ? tableMoney(shares[m.id]) : '<span class="zero-amount">—</span>') + '</td>').join('') +
         '<td class="exp-note">' + note + '</td></tr>';
     });
     grandTotal += catTotal;
-    const singlePayer = payerSet.size === 1 ? findMember(project, Array.from(payerSet)[0]) : null;
-    const subColor = singlePayer ? ' style="background:' + esc(singlePayer.color) + ';color:' + contrastText(singlePayer.color) + '"' : '';
-    body += '<tr class="subtotal-row"><td colspan="3" class="subtotal-label" aria-label="小计"></td>' +
-      '<td class="subtotal-amount"' + subColor + '>' + tableMoney(catTotal) + '</td>' +
+    body += '<tr class="subtotal-row"><td></td><td class="subtotal-word">小计</td><td></td>' +
+      '<td class="subtotal-amount">' + tableMoney(catTotal) + '</td>' +
       members.map(m => '<td class="member-amount">' + (catShares[m.id] ? tableMoney(catShares[m.id]) : '—') + '</td>').join('') +
       '<td class="exp-note"></td></tr>';
   });
   const totalMemberCells = members.map(m => '<td class="member-amount">' + tableMoney(memberGrand[m.id]) + '</td>').join('');
-  const totalRow = '<tr class="total-row"><th scope="row" class="col-cat"><span class="exp-cat-label">合计</span></th>' +
-    '<td colspan="3" class="total-label"></td><td class="total-amount">' + tableMoney(grandTotal) + '</td>' +
+  const totalRow = '<tr class="total-row"><td></td><td></td><td class="total-word">合计</td><td></td>' +
+    '<td class="total-amount">' + tableMoney(grandTotal) + '</td>' +
     totalMemberCells + '<td class="exp-note">' + all.length + ' 笔</td></tr>';
-  const pending = all.filter(exp => !exp.settled);
+  const pending = all.filter(exp => !exp.settled && needsSettlement(exp));
   const pendingSummary = computeMemberTotals(project, pending);
   const transferTotal = pendingSummary.reduce((sum, row) => sum + Math.max(0, row.netCents), 0);
   const transferCells = pendingSummary.map(row => {
@@ -1995,8 +2158,8 @@ function renderExpenseTable(project) {
     const text = row.netCents > 0 ? '+' + tableMoney(row.netCents) : row.netCents < 0 ? tableMoney(row.netCents) : '—';
     return '<td class="transfer-net ' + cls + '">' + text + '</td>';
   }).join('');
-  const transferRow = '<tr class="transfer-row" data-action="jump" data-target="settleSection" title="去下方结算区处理转账"><th scope="row" class="col-cat"><span class="exp-cat-label">转账</span></th>' +
-    '<td class="exp-time"></td><td class="exp-content"></td><td class="exp-detail-cell transfer-label">应收+ / 应付−</td>' +
+  const transferRow = '<tr class="transfer-row" data-action="jump" data-target="settleSection" title="去下方结算区处理转账">' +
+    '<td></td><td class="exp-time"></td><td class="transfer-word">转账</td><td class="exp-detail-cell transfer-label">应收+ / 应付−</td>' +
     '<td class="transfer-total">' + (pending.length ? tableMoney(transferTotal) : '0') + '</td>' +
     transferCells + '<td class="exp-note">' + (pending.length ? '待结清' : '已结清') + '</td></tr>';
   return topbar +
@@ -2006,7 +2169,7 @@ function renderExpenseTable(project) {
       '<tbody>' + body + '</tbody>' +
       '<tfoot>' + totalRow + transferRow + '</tfoot>' +
     '</table></div></div>' +
-    '<p class="table-note">金额单位：元。内容 = 项，明细 = 具体说明；成员列 = 每人应摊；金额格底色 = 付款人，已结清行变灰；点任一行查看支付清单、完整内容和分摊方式。<br>金额的颜色为支付者的颜色。</p>';
+    '<p class="table-note">金额单位：元。内容 = 项，明细 = 具体说明；成员列 = 每人应摊；点任一行查看支付清单、完整内容和分摊方式。<br>金额格的底色为暂付款方的颜色，无需参与者支付时不显示底色。</p>';
 }
 
 function renderShareMatrix(project) {
@@ -2062,20 +2225,25 @@ function openExpenseDetail(project, expense) {
   const cat = catMeta(expense.category);
   const payer = findMember(project, expense.payerId);
   const shares = computeExpenseShares(project, expense);
-  const splitRows = expense.participants.map(id => {
-    const member = findMember(project, id);
-    if (!member) return '';
-    const extra = expense.splitMode === 'weights' ? ' · ' + (Math.round((Number(expense.weights[id]) || 0) * 100) / 100) + ' 份' : '';
-    return '<div class="split-item">' + memberAvatar(member) +
-      '<span class="split-name">' + esc(member.name) + ' <span style="color:var(--muted);font-size:9px">' + esc(memberCode(member) + extra) + '</span></span>' +
-      '<span class="split-money">' + money(shares[id] || 0, false) + ' 元</span></div>';
-  }).join('');
+  const splitRows = ui.privacyHidden
+    ? '<p class="help-text" style="margin:0">分摊成员已隐藏。</p>'
+    : (expense.splitMode === 'none' || expense.payerId === EXTERNAL_PAYER_ID)
+    ? '<p class="help-text" style="margin:0">无需任何成员分摊，每人 0 元。</p>'
+    : expense.participants.map(id => {
+      const member = findMember(project, id);
+      if (!member) return '';
+      const extra = expense.splitMode === 'weights' ? ' · ' + (Math.round((Number(expense.weights[id]) || 0) * 100) / 100) + ' 份' : '';
+      return '<div class="split-item">' + memberAvatar(member) +
+        '<span class="split-name">' + esc(member.name) + (extra ? ' <span style="color:var(--muted);font-size:9px">' + esc(extra) + '</span>' : '') + '</span>' +
+        '<span class="split-money">' + money(shares[id] || 0, false) + ' 元</span></div>';
+    }).join('');
+  const external = expense.payerId === EXTERNAL_PAYER_ID;
   const infoRows = [
-    ['实际发生', dateLabel(expense.date, { weekday: true })],
-    ['报销日期', expense.reimburseDate ? dateLabel(expense.reimburseDate, { weekday: true }) : '未填写'],
+    ['实际发生', ui.privacyHidden ? '***' : dateLabel(expense.date, { weekday: true })],
     ['大类 / 项', cat.label + ' · ' + expense.subcategory],
+    ...(expense.amountExpression ? [['金额计算', expense.amountExpression + ' = ' + money(expense.amountCents)]] : []),
     ['分摊方式', SPLIT_LABELS[expense.splitMode] + ' · ' + tableSplitNote(project, expense)],
-    ['状态', expense.settled ? '已结清' : '待结清']
+    ['状态', expense.settled ? '已结清' : (needsSettlement(expense) ? '待结清' : '无需结算')]
   ].map(row => '<div class="detail-info-row"><span>' + row[0] + '</span><span>' + esc(row[1]) + '</span></div>').join('');
   const receiptHtml = expense.receipt
     ? '<div class="receipt-detail"><div class="field-label">支付清单</div><img class="receipt-thumb" src="' + expense.receipt + '" alt="支付清单">' +
@@ -2084,8 +2252,8 @@ function openExpenseDetail(project, expense) {
   const body = '<div class="exp-detail-head"><div style="flex:1;min-width:0"><div class="big-amount">' + money(expense.amountCents) + '</div>' +
       '<div class="detail-sub">' + esc(expense.title || expense.subcategory) + ' · ' + shortDateLabel(expense.date) + '</div></div>' +
       '<span class="status-pill ' + (expense.settled ? 'done' : 'upcoming') + '"><span class="dot"></span>' + (expense.settled ? '已结清' : '待结清') + '</span></div>' +
-    '<div class="payer-badge">' + (payer ? memberAvatar(payer) : '') +
-      '<span>付款人 · ' + esc(payer ? payer.name + '（' + memberCode(payer) + '）' : '未知') + '</span>' +
+    '<div class="payer-badge">' + (ui.privacyHidden ? '' : (external ? '<span class="avatar avatar-external">其</span>' : (payer ? memberAvatar(payer) : ''))) +
+      '<span>暂付款方 · ' + esc(ui.privacyHidden ? '已隐藏' : (external ? '其他' : (payer ? payer.name : '未知'))) + '</span>' +
       '<span style="margin-left:auto;font-weight:750;color:var(--ink)">已付 ' + money(expense.amountCents) + '</span></div>' +
     '<div class="detail-info">' + infoRows + '</div>' +
     (expense.detail ? '<div class="detail-info"><div class="field-label">具体明细</div><div class="detail-note">' + esc(expense.detail) + '</div></div>' : '') +
@@ -2096,7 +2264,7 @@ function openExpenseDetail(project, expense) {
     (!expense.settled ? '<button class="btn btn-primary" data-action="edit-expense" data-id="' + esc(expense.id) + '">' + icon('edit') + '编辑</button>' : '') + '</div>';
   openSheet({
     title: expense.title || expense.subcategory,
-    subtitle: cat.label + ' · ' + shortDateLabel(expense.date),
+    subtitle: cat.label + ' · ' + (ui.privacyHidden ? '***' : shortDateLabel(expense.date)),
     body,
     footer,
     onMount(backdrop) {
@@ -2135,7 +2303,7 @@ function openLedgerDetails() {
 }
 
 function renderSettlementSection(project) {
-  const pending = project.expenses.filter(e => !e.settled);
+  const pending = project.expenses.filter(e => !e.settled && needsSettlement(e));
   const pendingTotal = pending.reduce((sum, e) => sum + e.amountCents, 0);
   const summary = computeMemberTotals(project, pending);
   const transfers = computeTransfers(summary);
@@ -2145,7 +2313,7 @@ function renderSettlementSection(project) {
   if (!pending.length) {
     content = '<div class="settle-done"><div class="done-icon">' + icon('check') + '</div>' +
       '<div><h3>本次已全部结清</h3><p>' + (latest
-        ? '记录于 ' + esc(dateTimeLabel(latest.createdAt)) + ' · 共 ' + latest.expenseIds.length + ' 笔'
+        ? '记录于 ' + esc(privacyText(dateTimeLabel(latest.createdAt))) + ' · 共 ' + latest.expenseIds.length + ' 笔'
         : '当前没有待结清账目') + '</p></div>' +
       (latest ? '<button class="btn-link" style="margin-left:auto" data-action="undo-settlement" data-id="' + esc(latest.id) + '">撤销</button>' : '') +
       '</div>';
@@ -2213,7 +2381,7 @@ function renderOverview(project) {
   const recent = sortExpenses(project.expenses).slice(0, 3);
   const limits = project.limits;
   return '<div class="trip-meta">' +
-      '<div class="meta-left">' + icon('calendar') + '<span>' + esc(rangeLabel(project.startDate, project.endDate)) + '</span></div>' +
+      '<div class="meta-left">' + icon('calendar') + '<span>' + esc(privacyText(rangeLabel(project.startDate, project.endDate))) + '</span></div>' +
       '<div class="member-strip">' + avatarStack(project, 4) +
         '<button class="section-action" data-action="open-settings">' + project.members.length + '人' + icon('chevron', 'sm') + '</button>' +
       '</div>' +
@@ -2385,7 +2553,7 @@ function renderSettlement(project) {
           ? s.transfers.map(t => t.fromName + ' → ' + t.toName + ' ' + money(t.amountCents)).join(' · ')
           : '无需转账，账目已平';
         return '<div class="history-card"><div class="history-head"><div><div class="history-title">已结清 ' + s.expenseIds.length + ' 笔账目</div>' +
-          '<div class="history-date">' + esc(dateTimeLabel(s.createdAt)) + '</div></div>' +
+          '<div class="history-date">' + esc(privacyText(dateTimeLabel(s.createdAt))) + '</div></div>' +
           '<div class="history-amount">' + money(s.totalCents) + '</div></div>' +
           '<div class="history-transfers">' + esc(transferText) + '</div>' +
           (index === 0 ? '<div class="history-actions"><button class="btn-link" data-action="undo-settlement" data-id="' + esc(s.id) + '">撤销这次结清</button></div>' : '') +
@@ -2588,7 +2756,6 @@ function getCurrentProject() {
 function openNewProject() {
   const draft = {
     names: ['我', '旅伴'],
-    codes: ['A', 'B'],
     colors: [MEMBER_COLORS[0], MEMBER_COLORS[1]]
   };
   const body = '<form id="npForm" novalidate>' +
@@ -2602,10 +2769,10 @@ function openNewProject() {
       '<div class="stepper"><button type="button" id="npMinus" aria-label="减少人数">−</button>' +
         '<span class="stepper-value" id="npCount">2 人</span>' +
         '<button type="button" id="npPlus" aria-label="增加人数">+</button></div></div>' +
-    '<div class="field"><div class="field-label">成员 · 底色 · 代号 <span class="optional">点色块可改</span></div>' +
+    '<div class="field"><div class="field-label">成员 · 底色 <span class="optional">点色块可改</span></div>' +
       '<div id="npMembers"></div>' +
       '<div class="palette-quick"><span>整套配色</span><button type="button" data-palette="clear">清透</button><button type="button" data-palette="morandi">莫兰迪</button></div>' +
-      '<p class="field-hint">点左边的色块选择每位成员的底色，右边填 1–2 个字的代号。代号会显示在总表列头；默认 A、B、C…</p></div>' +
+      '<p class="field-hint">点左边色块选择底色；色块里自动显示名字的第一个字，作为总表列头代号，不再另设 A、B、C。</p></div>' +
     '<div id="npError"></div>' +
   '</form>';
   const sheet = openSheet({
@@ -2624,23 +2791,34 @@ function openNewProject() {
 
       function syncFromInputs() {
         Array.from(memberBox.querySelectorAll('.np-name')).forEach((input, i) => { draft.names[i] = input.value; });
-        Array.from(memberBox.querySelectorAll('.np-code')).forEach((input, i) => { draft.codes[i] = input.value.toUpperCase(); });
         Array.from(memberBox.querySelectorAll('.np-color')).forEach((input, i) => { draft.colors[i] = input.value; });
       }
       function renderMembers() {
         memberBox.innerHTML = draft.names.map((name, i) =>
           '<div class="np-member-row">' +
-            '<input type="color" class="np-color" value="' + esc(draft.colors[i]) + '" aria-label="第 ' + (i + 1) + ' 位成员底色">' +
+            '<label class="np-color-block" style="background:' + esc(draft.colors[i]) + ';color:' + contrastText(draft.colors[i]) + '" title="点按选择底色">' +
+              '<span class="np-code-preview">' + esc(initialOf(name) || '?') + '</span>' +
+              '<input type="color" class="np-color" value="' + esc(draft.colors[i]) + '" aria-label="第 ' + (i + 1) + ' 位成员底色">' +
+            '</label>' +
             '<input class="input np-name" maxlength="12" value="' + esc(name) + '" placeholder="成员 ' + (i + 1) + '" aria-label="第 ' + (i + 1) + ' 位成员名字">' +
-            '<input class="input np-code" maxlength="2" value="' + esc(draft.codes[i]) + '" placeholder="A" aria-label="第 ' + (i + 1) + ' 位成员代号">' +
           '</div>'
         ).join('');
         countEl.textContent = draft.names.length + ' 人';
         backdrop.querySelector('#npMinus').disabled = draft.names.length <= 2;
         backdrop.querySelector('#npPlus').disabled = draft.names.length >= 10;
-        Array.from(memberBox.querySelectorAll('.np-name')).forEach((input, i) => input.addEventListener('input', () => { draft.names[i] = input.value; }));
-        Array.from(memberBox.querySelectorAll('.np-code')).forEach((input, i) => input.addEventListener('input', () => { draft.codes[i] = input.value.toUpperCase(); }));
-        Array.from(memberBox.querySelectorAll('.np-color')).forEach((input, i) => input.addEventListener('input', () => { draft.colors[i] = input.value; }));
+        Array.from(memberBox.querySelectorAll('.np-name')).forEach((input, i) => input.addEventListener('input', () => {
+          draft.names[i] = input.value;
+          const preview = memberBox.querySelectorAll('.np-code-preview')[i];
+          if (preview) preview.textContent = initialOf(input.value) || '?';
+        }));
+        Array.from(memberBox.querySelectorAll('.np-color')).forEach((input, i) => input.addEventListener('input', () => {
+          draft.colors[i] = input.value;
+          const block = input.closest('.np-color-block');
+          if (block) {
+            block.style.background = input.value;
+            block.style.color = contrastText(input.value);
+          }
+        }));
       }
       function showError(message) {
         errorBox.innerHTML = message ? '<div class="form-error">' + esc(message) + '</div>' : '';
@@ -2658,20 +2836,14 @@ function openNewProject() {
       backdrop.querySelector('#npMinus').addEventListener('click', () => {
         syncFromInputs();
         if (draft.names.length <= 2) return;
-        draft.names.pop(); draft.codes.pop(); draft.colors.pop();
+        draft.names.pop(); draft.colors.pop();
         renderMembers();
       });
       backdrop.querySelector('#npPlus').addEventListener('click', () => {
         syncFromInputs();
         if (draft.names.length >= 10) return;
-        let nextCode = '';
-        for (let i = 0; i < 26; i++) {
-          const candidate = String.fromCharCode(65 + i);
-          if (!draft.codes.includes(candidate)) { nextCode = candidate; break; }
-        }
         const nextColor = ALL_MEMBER_COLORS.find(c => !draft.colors.includes(c)) || ALL_MEMBER_COLORS[0];
         draft.names.push('');
-        draft.codes.push(nextCode);
         draft.colors.push(nextColor);
         renderMembers();
         const inputs = memberBox.querySelectorAll('.np-name');
@@ -2688,7 +2860,6 @@ function openNewProject() {
         const name = nameInput.value.trim();
         syncFromInputs();
         const names = draft.names.map(n => n.trim());
-        const codes = draft.codes.map(c => c.trim().toUpperCase());
         const colors = draft.colors.map(c => String(c || '').toLowerCase());
         const start = startInput.value;
         const end = endInput.value;
@@ -2696,8 +2867,6 @@ function openNewProject() {
         if (names.length < 2 || names.length > 10) { showError('同行人数需要是 2–10 人'); return; }
         if (names.some(n => !n)) { showError('请把每一位成员的名字填写完整'); return; }
         if (new Set(names).size !== names.length) { showError('成员名字不能重复，方便分账时区分'); return; }
-        if (codes.some(c => !c)) { showError('请给每位成员填写一个代号'); return; }
-        if (new Set(codes).size !== codes.length) { showError('成员代号不能重复'); return; }
         if (colors.some(c => !/^#[0-9a-f]{6}$/i.test(c))) { showError('成员底色无效，请重新选择'); return; }
         if (new Set(colors).size !== colors.length) { showError('成员底色不要重复，方便一眼区分'); return; }
         if (!parseISO(start) || !parseISO(end)) { showError('请选择有效的开始和结束日期'); return; }
@@ -2709,7 +2878,7 @@ function openNewProject() {
           startDate: start,
           endDate: end,
           note: '',
-          members: names.map((n, i) => ({ id: uid('m'), name: n, code: codes[i], color: colors[i] })),
+          members: names.map((n, i) => ({ id: uid('m'), name: n, code: initialOf(n), color: colors[i] })),
           expenses: [],
           limits: [],
           budgets: {},
@@ -2751,10 +2920,20 @@ function openSettings() {
         (project.members.length < 10 ? '<button data-action="add-member">+ 添加成员</button>' : '') + '</div>' +
       '<div class="member-manage">' + project.members.map(m =>
         '<button class="member-row" data-action="edit-member" data-id="' + esc(m.id) + '">' + memberAvatar(m) +
-          '<span class="member-row-name">' + esc(m.name) + '</span>' +
-          '<span class="member-row-color"><span class="color-dot" style="background:' + esc(m.color) + ';width:9px;height:9px"></span>' +
-            esc(memberCode(m)) + '</span>' + icon('chevron') + '</button>').join('') + '</div>' +
-      '<p class="help-text">每位成员使用「方形底色 + 1–2 字代号」区分。代号默认 A、B、C…，也可以改成中文单字；表头和付款格都会沿用这个底色。</p></section>' +
+          '<span class="member-row-name">' + esc(m.name) + '</span>' + icon('chevron') + '</button>').join('') + '</div>' +
+      '<p class="help-text">每位成员使用「方形底色 + 名字首字」区分。表头、付款格和选择按钮都只显示色块里的首字。</p></section>' +
+    '<section class="settings-block">' +
+      '<div class="block-head"><div class="block-title">分类细项</div><span class="stats-card-note">可增减编辑</span></div>' +
+      CAT_ORDER.map(key => {
+        const cat = catMeta(key);
+        const subs = projectSubs(project, key);
+        return '<button class="nav-row" data-action="edit-subcategories" data-category="' + key + '">' +
+          '<span class="nav-row-icon" style="' + catStyle(cat) + '">' + icon(cat.icon) + '</span>' +
+          '<span class="nav-row-body"><span class="nav-row-title">' + cat.label + '</span>' +
+          '<span class="nav-row-sub">' + subs.length + ' 项 · ' + esc(subs.slice(0, 3).join(' / ')) + (subs.length > 3 ? '…' : '') + '</span></span>' +
+          icon('chevron', 'chev') + '</button>';
+      }).join('') +
+      '<p class="help-text">每个大项下的具体细项都可以新增、改名或删除；已经用于账目的细项不能直接删除，需要先改对应账目。</p></section>' +
     '<section class="settings-block">' +
       '<div class="block-head"><div class="block-title">预算估算</div><button data-action="open-budgets" data-return="settings">编辑</button></div>' +
       '<p class="help-text" style="margin-top:0">' + (Object.keys(project.budgets || {}).length
@@ -2814,6 +2993,83 @@ function openSettings() {
   });
 }
 
+function openSubcategoryEditor(project, categoryKey) {
+  if (!project || !CATEGORIES[categoryKey]) return;
+  const cat = catMeta(categoryKey);
+  const oldList = projectSubs(project, categoryKey).slice();
+  const rowHtml = (value, old) =>
+    '<div class="subcat-edit-row">' +
+      '<input class="input subcat-edit-input" maxlength="20" value="' + esc(value) + '" data-old="' + esc(old || '') + '" placeholder="细项名称">' +
+      '<button type="button" class="subcat-remove" data-remove-sub aria-label="删除">' + icon('close') + '</button>' +
+    '</div>';
+  const body = '<form id="subcategoryForm" novalidate>' +
+    '<p class="help-text" style="margin-top:0">编辑「' + cat.label + '」下的具体选项。已用于账目的细项不能删除；改名会同步更新已有账目。</p>' +
+    '<div class="subcat-edit-list" id="subcatRows">' + oldList.map(name => rowHtml(name, name)).join('') + '</div>' +
+    '<button type="button" class="btn-link" id="addSubcategory">+ 新增细项</button>' +
+    '<div id="subcategoryError" style="margin-top:10px"></div>' +
+  '</form>';
+  openSheet({
+    title: '编辑分类细项',
+    subtitle: cat.label,
+    body,
+    footer: '<button class="btn btn-primary" type="submit" form="subcategoryForm">' + icon('check') + '保存细项</button>',
+    onMount(backdrop) {
+      const form = backdrop.querySelector('#subcategoryForm');
+      const list = backdrop.querySelector('#subcatRows');
+      const errorBox = backdrop.querySelector('#subcategoryError');
+      const showError = message => {
+        errorBox.innerHTML = '<div class="form-error">' + esc(message) + '</div>';
+        toast(message, 'warn');
+      };
+      list.addEventListener('click', event => {
+        const button = event.target.closest('[data-remove-sub]');
+        if (button) button.closest('.subcat-edit-row').remove();
+      });
+      backdrop.querySelector('#addSubcategory').addEventListener('click', () => {
+        list.insertAdjacentHTML('beforeend', rowHtml('', ''));
+        const inputs = list.querySelectorAll('.subcat-edit-input');
+        if (inputs.length) inputs[inputs.length - 1].focus();
+      });
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const rows = Array.from(list.querySelectorAll('.subcat-edit-row')).map(row => {
+          const input = row.querySelector('.subcat-edit-input');
+          return { old: input.dataset.old || '', value: input.value.trim() };
+        });
+        if (!rows.length) { showError('至少保留一个具体选项'); return; }
+        if (rows.some(row => !row.value)) { showError('细项名称不能为空'); return; }
+        if (rows.length > 30) { showError('每个大项最多 30 个细项'); return; }
+        const values = rows.map(row => row.value.slice(0, 20));
+        if (new Set(values).size !== values.length) { showError('细项名称不能重复'); return; }
+        const used = {};
+        project.expenses.forEach(exp => {
+          if (exp.category === categoryKey) used[exp.subcategory] = (used[exp.subcategory] || 0) + 1;
+        });
+        const keptOld = new Set(rows.map(row => row.old).filter(Boolean));
+        for (const name of oldList) {
+          if (!keptOld.has(name) && used[name]) {
+            showError('「' + name + '」已有 ' + used[name] + ' 笔账目，不能删除；请先改对应账目');
+            return;
+          }
+        }
+        rows.forEach(row => {
+          if (!row.old || row.old === row.value) return;
+          project.expenses.forEach(exp => {
+            if (exp.category === categoryKey && exp.subcategory === row.old) exp.subcategory = row.value.slice(0, 20);
+          });
+        });
+        project.subcategories = project.subcategories || {};
+        project.subcategories[categoryKey] = values;
+        touchProject(project);
+        saveDB();
+        closeSheet();
+        renderApp();
+        toast('分类细项已更新');
+      });
+    }
+  });
+}
+
 /* ---------- 成员编辑 ---------- */
 function openMemberEditor(project, memberId) {
   const member = memberId ? findMember(project, memberId) : null;
@@ -2825,24 +3081,15 @@ function openMemberEditor(project, memberId) {
     Object.prototype.hasOwnProperty.call(e.customCents || {}, member.id)
   ) : false;
   const usedColors = project.members.filter(m => !member || m.id !== member.id).map(m => m.color);
-  const usedCodes = project.members.filter(m => !member || m.id !== member.id).map(m => memberCode(m));
   const defaultColor = member ? member.color : (ALL_MEMBER_COLORS.find(c => !usedColors.includes(c)) || ALL_MEMBER_COLORS[0]);
   let selectedColor = defaultColor;
-  let nextCode = '';
-  for (let i = 0; i < 26; i++) {
-    const candidate = String.fromCharCode(65 + i);
-    if (!usedCodes.includes(candidate)) { nextCode = candidate; break; }
-  }
-  const initialCode = member ? memberCode(member) : nextCode;
-  let selectedCode = initialCode;
+  let selectedCode = member ? initialOf(member.name) : '';
   const body = '<div style="text-align:center;margin:2px 0 17px">' +
       '<div id="memberPreview" class="avatar xl" style="background:' + esc(selectedColor) + ';color:' + contrastText(selectedColor) + ';margin:0 auto 7px">' + esc(selectedCode || '?') + '</div>' +
-      '<div class="stats-card-note">方形色块 + 代号</div></div>' +
+      '<div class="stats-card-note">方形色块 + 名字首字</div></div>' +
     '<form id="memberForm" novalidate>' +
-      '<div class="two-col"><div class="field"><label class="field-label" for="memberName">成员名字</label>' +
+      '<div class="field"><label class="field-label" for="memberName">成员名字</label>' +
         '<input class="input" id="memberName" maxlength="12" value="' + esc(member ? member.name : '') + '" placeholder="例如：小林" autocomplete="off"></div>' +
-        '<div class="field"><label class="field-label" for="memberCode">代号</label>' +
-        '<input class="input" id="memberCode" maxlength="2" value="' + esc(selectedCode) + '" placeholder="A" style="text-align:center;text-transform:uppercase"></div></div>' +
       '<div class="field"><div class="field-label">代表底色 <span class="optional">方形矩阵</span></div>' +
         '<div class="swatches" id="memberSwatches">' +
           '<div class="swatch-group-label">清透</div>' + MEMBER_COLORS.map(c =>
@@ -2850,7 +3097,7 @@ function openMemberEditor(project, memberId) {
           '<div class="swatch-group-label">莫兰迪</div>' + MORANDI_COLORS.map(c =>
             '<button type="button" class="swatch ' + (c === selectedColor ? 'on' : '') + '" data-color="' + c + '" style="background:' + c + '" aria-label="颜色 ' + c + '"></button>').join('') +
         '</div>' +
-        '<div class="image-setting-row"><label class="color-custom-label">自定义 <input type="color" id="memberColorInput" class="np-color" value="' + esc(selectedColor) + '"></label></div>' +
+        '<div class="image-setting-row"><label class="color-custom-label">自定义 <input type="color" id="memberColorInput" class="member-color-input" value="' + esc(selectedColor) + '"></label></div>' +
         (usedColors.length ? '<p class="field-hint">已使用的颜色会被其他成员占用，选择时请避免重复。</p>' : '') +
       '</div>' +
       '<div id="memberError"></div>' +
@@ -2864,7 +3111,6 @@ function openMemberEditor(project, memberId) {
     footer: '<button class="btn btn-primary" type="submit" form="memberForm">' + icon('check') + '保存成员</button>',
     onMount(backdrop) {
       const nameInput = backdrop.querySelector('#memberName');
-      const codeInput = backdrop.querySelector('#memberCode');
       const colorInput = backdrop.querySelector('#memberColorInput');
       const preview = backdrop.querySelector('#memberPreview');
       const errorBox = backdrop.querySelector('#memberError');
@@ -2874,22 +3120,13 @@ function openMemberEditor(project, memberId) {
         toast(message, 'warn');
       }
       function refreshPreview() {
-        const code = (codeInput.value || '').trim().toUpperCase();
-        selectedCode = code;
+        selectedCode = initialOf(nameInput.value.trim() || '?') || '?';
         preview.style.background = selectedColor;
         preview.style.color = contrastText(selectedColor);
-        preview.textContent = code || '?';
+        preview.textContent = selectedCode;
         colorInput.value = selectedColor;
       }
-      nameInput.addEventListener('input', () => {
-        if (codeInput.value.trim()) return;
-        const auto = initialOf(nameInput.value.trim() || '?');
-        if (!usedCodes.includes(auto)) { codeInput.value = auto; selectedCode = auto; refreshPreview(); }
-      });
-      codeInput.addEventListener('input', () => {
-        codeInput.value = codeInput.value.toUpperCase().slice(0, 2);
-        refreshPreview();
-      });
+      nameInput.addEventListener('input', refreshPreview);
       backdrop.querySelectorAll('.swatch').forEach(btn => {
         btn.addEventListener('click', () => {
           selectedColor = btn.dataset.color;
@@ -2905,14 +3142,10 @@ function openMemberEditor(project, memberId) {
       form.addEventListener('submit', event => {
         event.preventDefault();
         const name = nameInput.value.trim();
-        const code = codeInput.value.trim().toUpperCase();
+        const code = initialOf(name);
         if (!name) { showMemberError('请填写成员名字'); return; }
-        if (!code) { showMemberError('请填写 1–2 个字的代号'); return; }
         if (project.members.some(m => m.id !== (member && member.id) && m.name === name)) {
           showMemberError('已有同名成员，请换一个称呼'); return;
-        }
-        if (project.members.some(m => m.id !== (member && member.id) && memberCode(m) === code)) {
-          showMemberError('这个代号已被其他成员使用，请换一个'); return;
         }
         if (project.members.some(m => m.id !== (member && member.id) && m.color === selectedColor)) {
           showMemberError('这个颜色已被其他成员使用，请换一个'); return;
@@ -2966,7 +3199,7 @@ function openLimitEditor(project, limitId) {
   const categories = CAT_ORDER.concat(['total']);
   const categoryButtons = categories.map(key => {
     const isTotal = key === 'total';
-    const cat = isTotal ? { label: '总支出', icon: 'wallet', color: '#1c6353', soft: '#e4efeb' } : catMeta(key);
+    const cat = isTotal ? { label: '总支出', icon: 'wallet', color: '#645074', soft: '#efe9f2' } : catMeta(key);
     return '<button type="button" class="category-btn ' + (key === category ? 'on' : '') + '" data-limit-cat="' + key + '" style="' + catStyle(cat) + '">' +
       icon(cat.icon) + '<span>' + cat.label + '</span></button>';
   }).join('');
@@ -3161,19 +3394,23 @@ function compressImageFile(file, maxSide, quality, maxLength) {
 
 function openAppearance() {
   const draft = Object.assign({}, normalizeAppSettings(db.settings));
-  const themeButtons = THEME_OPTIONS.map(t =>
+  const themeButtons = draft.themeOptions.map(t =>
     '<button type="button" class="theme-option ' + (draft.theme === t.key ? 'on' : '') + '" data-theme-key="' + t.key + '">' +
       '<span class="theme-swatch" style="background:linear-gradient(145deg,' + t.color + ',' + t.soft + ')"></span>' +
-      '<span>' + t.label + '</span></button>').join('');
-  const bgButtons = BACKGROUND_OPTIONS.map(b =>
+      '<span>' + esc(t.label) + '</span></button>').join('');
+  const bgButtons = draft.bgOptions.map(b =>
     '<button type="button" class="bg-option ' + (draft.background === b.key ? 'on' : '') + '" data-bg-key="' + b.key + '">' +
-      '<span class="bg-thumb ' + b.key + '"></span>' + b.label + '</button>').join('');
+      '<span class="bg-thumb" style="background:linear-gradient(145deg,' + esc(b.color) + ',' + mixHex(b.color, '#000000', 0.10) + ')"></span>' + esc(b.label) + '</button>').join('');
   const body = '<form id="appearanceForm" novalidate>' +
     '<section class="settings-block"><div class="block-head"><div class="block-title">主题配色</div><span class="stats-card-note">全局生效</span></div>' +
-      '<div class="theme-grid">' + themeButtons + '</div></section>' +
+      '<div class="theme-grid" id="themeGrid">' + themeButtons + '</div></section>' +
     '<section class="settings-block"><div class="block-head"><div class="block-title">背景底色</div></div>' +
-      '<div class="bg-grid">' + bgButtons + '</div></section>' +
-    '<section class="settings-block"><div class="block-head"><div class="block-title">首页绿色卡片</div></div>' +
+      '<div class="bg-grid" id="bgGrid">' + bgButtons + '</div></section>' +
+    '<section class="settings-block"><div class="block-head"><div class="block-title">选项内容</div><span class="stats-card-note">可编辑</span></div>' +
+      '<p class="help-text" style="margin-top:0">改名称和主色后，上面的主题/背景按钮会同步变化。颜色会自动生成深浅搭配。</p>' +
+      '<div class="option-edit-group"><div class="option-edit-label">主题选项</div><div id="themeOptionEditors"></div></div>' +
+      '<div class="option-edit-group"><div class="option-edit-label">背景选项</div><div id="bgOptionEditors"></div></div></section>' +
+    '<section class="settings-block"><div class="block-head"><div class="block-title">首页卡片</div></div>' +
       '<div class="hero-preview" id="heroPreview"><strong id="heroPreviewTitle">' + esc(draft.heroTitle) + '</strong>' +
         '<span id="heroPreviewCopy">' + esc(draft.heroCopy) + '</span></div>' +
       '<div class="image-setting-row"><button type="button" id="pickHeroImage">' + (draft.heroImage ? '更换背景图' : '选择背景图') + '</button>' +
@@ -3211,26 +3448,91 @@ function openAppearance() {
         const copy = copyInput.value.trim() || DEFAULT_APP_SETTINGS.heroCopy;
         backdrop.querySelector('#heroPreviewTitle').textContent = title;
         backdrop.querySelector('#heroPreviewCopy').textContent = copy;
-        const theme = THEME_OPTIONS.find(t => t.key === draft.theme) || THEME_OPTIONS[0];
+        const theme = draft.themeOptions.find(t => t.key === draft.theme) || draft.themeOptions[0];
         preview.style.background = draft.heroImage
           ? 'linear-gradient(145deg,rgba(10,35,29,.80),rgba(10,35,29,.66)),url(' + draft.heroImage + ') center/cover'
           : 'radial-gradient(circle at 100% 0%,rgba(255,255,255,.10),transparent 55%),linear-gradient(145deg,' + theme.color + ',' + theme.deep + ')';
       }
       titleInput.addEventListener('input', updatePreview);
       copyInput.addEventListener('input', updatePreview);
-      backdrop.querySelectorAll('[data-theme-key]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          draft.theme = btn.dataset.themeKey;
-          backdrop.querySelectorAll('[data-theme-key]').forEach(b => b.classList.toggle('on', b === btn));
+      const themeGrid = backdrop.querySelector('#themeGrid');
+      const bgGrid = backdrop.querySelector('#bgGrid');
+      const themeEditors = backdrop.querySelector('#themeOptionEditors');
+      const bgEditors = backdrop.querySelector('#bgOptionEditors');
+      function renderThemeGrid() {
+        themeGrid.innerHTML = draft.themeOptions.map(t =>
+          '<button type="button" class="theme-option ' + (draft.theme === t.key ? 'on' : '') + '" data-theme-key="' + t.key + '">' +
+            '<span class="theme-swatch" style="background:linear-gradient(145deg,' + esc(t.color) + ',' + esc(t.soft) + ')"></span>' +
+            '<span>' + esc(t.label) + '</span></button>').join('');
+        themeGrid.querySelectorAll('[data-theme-key]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            draft.theme = btn.dataset.themeKey;
+            renderThemeGrid();
+            updatePreview();
+          });
+        });
+      }
+      function renderBgGrid() {
+        bgGrid.innerHTML = draft.bgOptions.map(b =>
+          '<button type="button" class="bg-option ' + (draft.background === b.key ? 'on' : '') + '" data-bg-key="' + b.key + '">' +
+            '<span class="bg-thumb" style="background:linear-gradient(145deg,' + esc(b.color) + ',' + mixHex(b.color, '#000000', 0.10) + ')"></span>' + esc(b.label) + '</button>').join('');
+        bgGrid.querySelectorAll('[data-bg-key]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            draft.background = btn.dataset.bgKey;
+            renderBgGrid();
+          });
+        });
+      }
+      function renderOptionEditors() {
+        themeEditors.innerHTML = '<div class="option-edit-list">' + draft.themeOptions.map(t =>
+          '<div class="option-edit-row">' +
+            '<span class="option-edit-swatch" data-theme-swatch="' + t.key + '" style="background:' + esc(t.color) + '"></span>' +
+            '<input class="input option-edit-name" maxlength="10" data-theme-label="' + t.key + '" value="' + esc(t.label) + '" aria-label="主题名称">' +
+            '<input class="option-edit-color" type="color" data-theme-color="' + t.key + '" value="' + esc(t.color) + '" aria-label="主题主色">' +
+          '</div>').join('') + '</div>';
+        bgEditors.innerHTML = '<div class="option-edit-list">' + draft.bgOptions.map(b =>
+          '<div class="option-edit-row">' +
+            '<span class="option-edit-swatch" data-bg-swatch="' + b.key + '" style="background:' + esc(b.color) + '"></span>' +
+            '<input class="input option-edit-name" maxlength="10" data-bg-label="' + b.key + '" value="' + esc(b.label) + '" aria-label="背景名称">' +
+            '<input class="option-edit-color" type="color" data-bg-color="' + b.key + '" value="' + esc(b.color) + '" aria-label="背景颜色">' +
+          '</div>').join('') + '</div>';
+        themeEditors.querySelectorAll('[data-theme-label]').forEach(input => input.addEventListener('input', () => {
+          const item = draft.themeOptions.find(t => t.key === input.dataset.themeLabel);
+          if (!item) return;
+          item.label = input.value.slice(0, 10);
+          renderThemeGrid();
+        }));
+        themeEditors.querySelectorAll('[data-theme-color]').forEach(input => input.addEventListener('input', () => {
+          const item = draft.themeOptions.find(t => t.key === input.dataset.themeColor);
+          if (!item) return;
+          item.color = input.value;
+          item.deep = mixHex(item.color, '#000000', 0.28);
+          item.soft = mixHex(item.color, '#ffffff', 0.86);
+          item.custom = true;
+          const swatch = themeEditors.querySelector('[data-theme-swatch="' + item.key + '"]');
+          if (swatch) swatch.style.background = item.color;
+          renderThemeGrid();
           updatePreview();
-        });
-      });
-      backdrop.querySelectorAll('[data-bg-key]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          draft.background = btn.dataset.bgKey;
-          backdrop.querySelectorAll('[data-bg-key]').forEach(b => b.classList.toggle('on', b === btn));
-        });
-      });
+        }));
+        bgEditors.querySelectorAll('[data-bg-label]').forEach(input => input.addEventListener('input', () => {
+          const item = draft.bgOptions.find(b => b.key === input.dataset.bgLabel);
+          if (!item) return;
+          item.label = input.value.slice(0, 10);
+          renderBgGrid();
+        }));
+        bgEditors.querySelectorAll('[data-bg-color]').forEach(input => input.addEventListener('input', () => {
+          const item = draft.bgOptions.find(b => b.key === input.dataset.bgColor);
+          if (!item) return;
+          item.color = input.value;
+          item.custom = true;
+          const swatch = bgEditors.querySelector('[data-bg-swatch="' + item.key + '"]');
+          if (swatch) swatch.style.background = item.color;
+          renderBgGrid();
+        }));
+      }
+      renderThemeGrid();
+      renderBgGrid();
+      renderOptionEditors();
       backdrop.querySelector('#pickHeroImage').addEventListener('click', () => imageInput.click());
       imageInput.addEventListener('change', async () => {
         const file = imageInput.files && imageInput.files[0];
@@ -3255,8 +3557,9 @@ function openAppearance() {
       });
       backdrop.querySelector('#resetAppearance').addEventListener('click', () => {
         Object.assign(draft, normalizeAppSettings(null));
-        backdrop.querySelectorAll('[data-theme-key]').forEach(b => b.classList.toggle('on', b.dataset.themeKey === draft.theme));
-        backdrop.querySelectorAll('[data-bg-key]').forEach(b => b.classList.toggle('on', b.dataset.bgKey === draft.background));
+        renderThemeGrid();
+        renderBgGrid();
+        renderOptionEditors();
         titleInput.value = draft.heroTitle;
         copyInput.value = draft.heroCopy;
         kickerInput.value = draft.heroKicker;
@@ -3293,7 +3596,7 @@ function openDataManager() {
   const expenseCount = db.projects.reduce((sum, p) => sum + p.expenses.length, 0);
   const body = '<section class="settings-block"><div class="block-head"><div class="block-title">外观与文案</div></div>' +
       '<button class="nav-row" data-action="open-appearance"><span class="nav-row-icon">' + icon('spark') + '</span>' +
-        '<span class="nav-row-body"><span class="nav-row-title">主题、背景与首页文字</span><span class="nav-row-sub">四种配色、背景底色、绿色卡片文案与背景图</span></span>' + icon('chevron', 'chev') + '</button>' +
+        '<span class="nav-row-body"><span class="nav-row-title">主题、背景与首页文字</span><span class="nav-row-sub">四种配色、背景底色、首页卡片文案与背景图</span></span>' + icon('chevron', 'chev') + '</button>' +
     '</section>' +
     '<section class="settings-block" style="padding:17px">' +
       '<div class="block-title" style="margin-bottom:5px">本机数据</div>' +
@@ -3324,17 +3627,17 @@ function openDataManager() {
 
 function openHelp() {
   const body = '<section class="settings-block"><div class="block-title" style="margin-bottom:8px">三步开始</div>' +
-      '<p class="help-text" style="margin-top:0">1. 新建项目，填好同行人、日期、每位成员的底色和代号。<br>2. 每笔花销记下：实际发生日期、报销日期（可选）、付款人、类别、内容、具体明细、金额、谁参与分摊，还可以上传支付清单。<br>3. 项目主页面看明细总表：金额格底色代表付款人，成员列头是色块代号，每类有小计，末尾有合计和转账；4 人以内整表直接显示。点任意一行查看凭证和完整分摊。</p></section>' +
+      '<p class="help-text" style="margin-top:0">1. 新建项目，填好同行人、日期、每位成员的底色；色块里会自动显示名字首字。<br>2. 每笔花销按顺序记：大项、时间、金额（可写算式）、具体明细、暂付款方、分摊方式、备注和支付清单。<br>3. 项目主页面看明细总表：分类 / 时间 / 内容 / 明细 / 金额 / 成员 / 备注，分类图标在第一列并上下居中，类名在图标下加粗；4 人以内整表直接显示。点任意一行查看算式、凭证和完整分摊。</p></section>' +
     '<section class="settings-block"><div class="block-title" style="margin-bottom:8px">关于成员矩阵</div>' +
-      '<p class="help-text" style="margin-top:0">每位成员用「方形底色 + 1–2 字代号」表示。新项目默认 A、B、C…，也可以改成中文单字；颜色有清透和莫兰迪两组，也能自选。表格列头、付款格和详情页都会沿用同一个底色。</p></section>' +
+      '<p class="help-text" style="margin-top:0">每位成员用「方形底色 + 名字首字」表示，不再另设 A/B/C/D。颜色有清透和莫兰迪两组，也能自选。表格列头、暂付款方按钮和详情页都会沿用同一个底色。</p></section>' +
     '<section class="settings-block"><div class="block-title" style="margin-bottom:8px">四种分摊方式</div>' +
       '<p class="help-text" style="margin-top:0"><strong>均分：</strong>选中的人平均承担。<br><strong>按份数：</strong>适合大人/小孩按 1 份、0.5 份分配。<br><strong>指定金额：</strong>直接填每个人应承担多少，合计必须等于总额。<br><strong>个人承担：</strong>整笔只算在某一个人头上，适合个人购物。</p></section>' +
     '<section class="settings-block"><div class="block-title" style="margin-bottom:8px">支付清单与明细总表</div>' +
-      '<p class="help-text" style="margin-top:0">记一笔时可以选择付款人、上传支付清单。保存后，该笔的总金额格会用付款人的底色填充，备注列显示分摊方式；点总表任一行可以查看大图凭证、完整明细和每个人应摊的金额，再进入编辑。</p></section>' +
+      '<p class="help-text" style="margin-top:0">记一笔时可以选择暂付款方（成员或「其他」）、上传支付清单。保存后，金额格用暂付款方底色；选「其他」时总额保留、每人应摊为 0、金额格不显示底色。点总表任一行可以查看计算式、凭证、完整明细和每个人应摊的金额，再进入编辑。</p></section>' +
     '<section class="settings-block"><div class="block-title" style="margin-bottom:8px">预算对比</div>' +
       '<p class="help-text" style="margin-top:0">在项目设置或页面底部「预算对比」里，给交通、住宿、景点、餐饮、其他分别填一个预估金额。实际花销会以横条显示，竖线表示预算位置，右侧显示超出或低于预算的百分比。</p></section>' +
     '<section class="settings-block"><div class="block-title" style="margin-bottom:8px">外观与文案</div>' +
-      '<p class="help-text" style="margin-top:0">首页右上角进入「设置与数据 → 外观与文案」，可以切换四种主题色和背景底色、修改绿色卡片里的标题与说明，也可以上传一张自己的背景图。设置只影响当前设备。</p></section>' +
+      '<p class="help-text" style="margin-top:0">首页右上角进入「设置与数据 → 外观与文案」，可以切换四种主题色和背景底色、修改每个主题/背景选项的名称与颜色、修改首页卡片标题与说明，也可以上传一张背景图。设置只影响当前设备。</p></section>' +
     '<section class="settings-block"><div class="block-title" style="margin-bottom:8px">报销限额</div>' +
       '<p class="help-text" style="margin-top:0">可给餐饮、交通等设置「每天/全程」「每人/全组」的金额上限。选「每人」时，会按每笔实际分摊到个人的金额统计并取最高值，不会简单按人数平均。超出时项目主页面顶部会提醒。例如：出差餐饮每天每人 ¥120。</p></section>' +
     '<section class="settings-block"><div class="block-title" style="margin-bottom:8px">数据与隐私</div>' +
@@ -3372,7 +3675,7 @@ function csvCell(value) {
 function exportProjectCSV(project) {
   if (!project) return;
   if (!project.expenses.length) { toast('这个项目还没有账目', 'warn'); return; }
-  const rows = [['日期', '报销日期', '大类', '细项', '内容', '具体明细', '付款人', '金额(元)', '分摊方式', '分摊明细', '备注', '凭证', '状态']];
+  const rows = [['日期', '大类', '细项', '内容', '具体明细', '暂付款方', '金额(元)', '分摊方式', '分摊明细', '备注', '凭证', '状态']];
   sortExpenses(project.expenses).slice().reverse().forEach(exp => {
     const payer = findMember(project, exp.payerId);
     const shares = computeExpenseShares(project, exp);
@@ -3380,18 +3683,17 @@ function exportProjectCSV(project) {
       .map(m => m.name + ' ' + yuanFixed(shares[m.id] || 0)).join('；');
     rows.push([
       exp.date,
-      exp.reimburseDate || '',
       catMeta(exp.category).label,
       exp.subcategory,
       exp.title || exp.subcategory,
       exp.detail,
-      payer ? payer.name : '未知',
+      exp.payerId === EXTERNAL_PAYER_ID ? '其他' : (payer ? payer.name : '未知'),
       yuanFixed(exp.amountCents),
       SPLIT_LABELS[exp.splitMode],
       detail,
       exp.note,
       exp.receipt ? '有' : '无',
-      exp.settled ? '已结清' : '待结清'
+      exp.settled ? '已结清' : (needsSettlement(exp) ? '待结清' : '无需结算')
     ]);
   });
   const csv = '\ufeff' + rows.map(row => row.map(csvCell).join(',')).join('\r\n');
@@ -3442,14 +3744,8 @@ function validateBackupProject(raw) {
     memberNames.add(name);
     memberColors.add(color);
   }
-  const memberCodes = new Set();
-  for (const m of raw.members) {
-    const code = String(m.code || '').trim().toUpperCase();
-    if (code && code.length > 2) return '成员代号过长';
-    if (code && memberCodes.has(code)) return '成员代号重复';
-    if (code) memberCodes.add(code);
-  }
   const expenseIds = new Set();
+  const subcategoryMap = normalizeSubcategories(raw.subcategories);
   for (const exp of raw.expenses) {
     if (!exp || typeof exp !== 'object' || !exp.id) return '账目信息不完整';
     const expId = String(exp.id);
@@ -3457,14 +3753,13 @@ function validateBackupProject(raw) {
     if (expenseIds.has(expId)) return '账目 ID 重复';
     expenseIds.add(expId);
     if (!parseISO(exp.date)) return '账目日期无效：' + (exp.title || expId);
-    if (exp.reimburseDate && !parseISO(exp.reimburseDate)) return '报销日期无效：' + (exp.title || expId);
     if (!CATEGORIES[exp.category]) return '账目大类无效';
-    if (!CATEGORIES[exp.category].subs.includes(exp.subcategory)) return '账目细项无效';
+    if (!subcategoryMap[exp.category].includes(exp.subcategory)) return '账目细项无效';
     if (!SPLIT_LABELS[exp.splitMode]) return '分摊方式无效';
     const amount = Number(exp.amountCents);
     if (!Number.isFinite(amount) || Math.round(amount) !== amount || amount <= 0) return '账目金额无效';
     if (exp.receipt && !isImageDataUrl(exp.receipt, 950000)) return '支付清单图片格式无效';
-    if (!memberIds.has(String(exp.payerId))) return '付款人不在成员列表中';
+    if (String(exp.payerId) !== EXTERNAL_PAYER_ID && !memberIds.has(String(exp.payerId))) return '暂付款方不在成员列表中';
     if (!Array.isArray(exp.participants) || !exp.participants.length) return '账目缺少分摊成员';
     const participants = exp.participants.map(String);
     if (new Set(participants).size !== participants.length) return '分摊成员重复';
@@ -3611,27 +3906,27 @@ function addSampleProject() {
 
 /* ---------- 结算操作 ---------- */
 function buildSettlementText(project) {
-  const pending = project.expenses.filter(e => !e.settled);
+  const pending = project.expenses.filter(e => !e.settled && needsSettlement(e));
   const total = pending.reduce((sum, e) => sum + e.amountCents, 0);
   const summary = computeMemberTotals(project, pending);
   const transfers = computeTransfers(summary);
   const lines = [];
   lines.push('【' + project.name + '】旅费结算单');
   lines.push('日期：' + rangeLabel(project.startDate, project.endDate));
-  lines.push('待结清：' + money(total) + ' · ' + pending.length + ' 笔账目');
-  lines.push('总支出：' + money(computeProjectStats(project).totalCents) + ' · 人均 ' + money(computeProjectStats(project).avgCents));
+  lines.push('待结清：' + money(total, true, true) + ' · ' + pending.length + ' 笔账目');
+  lines.push('总支出：' + money(computeProjectStats(project).totalCents, true, true) + ' · 人均 ' + money(computeProjectStats(project).avgCents, true, true));
   lines.push('');
   if (!transfers.length) {
     lines.push('本次无需转账，账目已互相抵消。');
   } else {
     lines.push('建议转账：');
-    transfers.forEach((t, i) => lines.push((i + 1) + '. ' + t.fromName + ' → ' + t.toName + ' ' + money(t.amountCents)));
+    transfers.forEach((t, i) => lines.push((i + 1) + '. ' + t.fromName + ' → ' + t.toName + ' ' + money(t.amountCents, true, true)));
   }
   lines.push('');
   lines.push('成员收支：');
   summary.forEach(m => {
-    const net = m.netCents > 0 ? '应收 ' + money(m.netCents) : m.netCents < 0 ? '应付 ' + money(-m.netCents) : '已平';
-    lines.push(m.name + '：垫付 ' + money(m.paidCents) + '，应摊 ' + money(m.shareCents) + '，' + net);
+    const net = m.netCents > 0 ? '应收 ' + money(m.netCents, true, true) : m.netCents < 0 ? '应付 ' + money(-m.netCents, true, true) : '已平';
+    lines.push(m.name + '：垫付 ' + money(m.paidCents, true, true) + '，应摊 ' + money(m.shareCents, true, true) + '，' + net);
   });
   lines.push('');
   lines.push('由「乐享」生成');
@@ -3639,7 +3934,7 @@ function buildSettlementText(project) {
 }
 
 async function copySettlement(project) {
-  const pending = project.expenses.filter(e => !e.settled);
+  const pending = project.expenses.filter(e => !e.settled && needsSettlement(e));
   if (!pending.length) { toast('当前没有待结清账目', 'warn'); return; }
   const ok = await copyText(buildSettlementText(project));
   if (ok) toast('结算清单已复制');
@@ -3647,7 +3942,7 @@ async function copySettlement(project) {
 }
 
 async function recordSettlement(project) {
-  const pending = project.expenses.filter(e => !e.settled);
+  const pending = project.expenses.filter(e => !e.settled && needsSettlement(e));
   if (!pending.length) { toast('当前没有待结清账目', 'warn'); return; }
   const total = pending.reduce((sum, e) => sum + e.amountCents, 0);
   const ok = await confirmDialog({
@@ -3656,7 +3951,7 @@ async function recordSettlement(project) {
     okText: '记录结清'
   });
   if (!ok) return;
-  const stillPending = project.expenses.filter(e => !e.settled);
+  const stillPending = project.expenses.filter(e => !e.settled && needsSettlement(e));
   if (!stillPending.length) { toast('账目状态已变化，请重试', 'warn'); return; }
   const currentSummary = computeMemberTotals(project, stillPending);
   const currentTransfers = computeTransfers(currentSummary);
@@ -3709,6 +4004,13 @@ async function handleAction(action, target) {
   switch (action) {
     case 'new-project': openNewProject(); break;
     case 'open-project': goProject(target.dataset.id); break;
+    case 'edit-subcategories':
+      if (target.dataset.category) openSubcategoryEditor(getCurrentProject(), target.dataset.category);
+      break;
+    case 'toggle-privacy':
+      ui.privacyHidden = !ui.privacyHidden;
+      renderApp();
+      break;
     case 'back-home': goHome(); break;
     case 'filter':
       ui.ledgerFilter = target.dataset.cat || 'all';
@@ -3827,7 +4129,7 @@ function openExpenseSheet(project, existing) {
   if (!participantIds.length) participantIds = allIds.slice();
   const draft = {
     category: existing ? existing.category : 'transport',
-    subcategory: existing ? existing.subcategory : CATEGORIES.transport.subs[0],
+    subcategory: existing ? existing.subcategory : projectSubs(project, 'transport')[0],
     payerId: existing ? existing.payerId : project.members[0].id,
     splitMode: existing ? existing.splitMode : 'equal',
     participants: new Set(participantIds),
@@ -3838,6 +4140,7 @@ function openExpenseSheet(project, existing) {
   draft.participants.forEach(id => {
     if (!(Number(draft.weights[id]) > 0)) draft.weights[id] = 1;
   });
+  if (draft.payerId === EXTERNAL_PAYER_ID) draft.splitMode = 'none';
   if (draft.splitMode === 'personal') {
     draft.participants = new Set([participantIds[0]]);
   }
@@ -3848,30 +4151,34 @@ function openExpenseSheet(project, existing) {
       icon(cat.icon) + '<span>' + cat.label + '</span></button>';
   }).join('');
 
+  let initialDetail = existing ? (existing.detail || '') : '';
+  if (existing && existing.title && existing.title !== existing.subcategory && !initialDetail.includes(existing.title)) {
+    initialDetail = existing.title + (initialDetail ? '；' + initialDetail : '');
+  }
+  const amountValue = existing ? (existing.amountExpression || centsToInput(existing.amountCents)) : '';
   const body = '<form id="expenseForm" novalidate>' +
+    '<div class="field"><div class="field-label">大项</div><div class="category-picker" id="catPicker">' + catButtons + '</div>' +
+      '<div class="subchips" id="subWrap"></div>' +
+      '<p class="field-hint" style="margin-top:7px">细项可在「项目设置 → 分类细项」中增减、改名或删除。</p></div>' +
+    '<div class="field"><label class="field-label" for="expDate">时间</label>' +
+      '<input class="input" id="expDate" type="date" value="' + esc(existing ? existing.date : defaultExpenseDate(project)) + '"></div>' +
     '<div class="amount-block">' +
       '<div class="amount-label"><span>金额</span><span>可输入算式</span></div>' +
       '<div class="amount-input-wrap"><span class="amount-currency">¥</span>' +
         '<input class="amount-input" id="expAmount" inputmode="decimal" autocomplete="off" placeholder="0" ' +
-          'value="' + esc(existing ? centsToInput(existing.amountCents) : '') + '" aria-label="金额"></div>' +
+          'value="' + esc(amountValue) + '" aria-label="金额"></div>' +
       '<div class="calc-row">' +
         ['+', '−', '×', '÷', '(', ')'].map(v => '<button type="button" class="calc-key" data-calc="' + v + '">' + v + '</button>').join('') +
         '<button type="button" class="calc-key" data-calc-back aria-label="退格">⌫</button>' +
         '<span class="amount-preview" id="amountPreview"></span></div>' +
       '<div class="amount-error" id="amountError"></div>' +
     '</div>' +
-    '<div class="field"><label class="field-label" for="expTitle">具体内容 / 项说明 <span class="optional">可选</span></label>' +
-      '<input class="input" id="expTitle" maxlength="60" autocomplete="off" placeholder="例如：上海→大理往返机票" value="' + esc(existing ? existing.title : '') + '"></div>' +
-    '<div class="field"><label class="field-label" for="expDetail">具体明细 <span class="optional">可选</span></label>' +
-      '<input class="input" id="expDetail" maxlength="200" autocomplete="off" placeholder="例如：车费1600，高速费400" value="' + esc(existing ? existing.detail : '') + '"></div>' +
-    '<div class="two-col"><div class="field"><label class="field-label" for="expDate">实际发生日期</label>' +
-      '<input class="input" id="expDate" type="date" value="' + esc(existing ? existing.date : defaultExpenseDate(project)) + '"></div>' +
-      '<div class="field"><label class="field-label" for="expReimburseDate">报销日期 <span class="optional">可选</span></label>' +
-      '<input class="input" id="expReimburseDate" type="date" value="' + esc(existing ? existing.reimburseDate || '' : '') + '"></div></div>' +
-    '<div class="field"><div class="field-label">谁付的钱</div><div class="member-select" id="payerSelect">' + payerChipsHTML(project, draft) + '</div></div>' +
-    '<div class="field"><div class="field-label">大项</div><div class="category-picker" id="catPicker">' + catButtons + '</div>' +
-      '<div class="subchips" id="subWrap"></div></div>' +
+    '<div class="field"><label class="field-label" for="expDetail">具体明细 <span class="optional">可选 · 可换行分段</span></label>' +
+      '<textarea class="textarea" id="expDetail" maxlength="200" placeholder="例如：珠海飞上海 2408*0.6=1444.8 元" style="min-height:82px">' + esc(initialDetail) + '</textarea></div>' +
+    '<div class="field"><div class="field-label">暂付款方</div><div class="member-select" id="payerSelect">' + payerChipsHTML(project, draft) + '</div></div>' +
     '<div class="split-section" id="splitArea"></div>' +
+    '<div class="field"><label class="field-label" for="expNote">备注 <span class="optional">可选</span></label>' +
+      '<textarea class="textarea" id="expNote" maxlength="300" placeholder="任意备注，可留空">' + esc(existing ? existing.note : '') + '</textarea></div>' +
     '<div class="receipt-field">' +
       '<div class="field-label">支付清单 <span class="optional">可选 · 小票/账单</span></div>' +
       '<div id="receiptPreview" class="receipt-preview"></div>' +
@@ -3880,15 +4187,13 @@ function openExpenseSheet(project, existing) {
         '<span class="stats-card-note">自动压缩后保存在本机</span></div>' +
       '<input class="hidden" type="file" id="receiptInput" accept="image/*">' +
     '</div>' +
-    '<div class="field"><label class="field-label" for="expNote">备注 <span class="optional">可选</span></label>' +
-      '<textarea class="textarea" id="expNote" maxlength="300" placeholder="补充说明、发票号等">' + esc(existing ? existing.note : '') + '</textarea></div>' +
     '<div id="expError"></div>' +
     (isEdit ? '<button class="btn btn-danger btn-block btn-sm" type="button" id="expDelete" style="margin-top:4px">' + icon('trash') + '删除这笔账目</button>' : '') +
   '</form>';
 
   openSheet({
     title: isEdit ? '编辑账目' : '记一笔',
-    subtitle: project.name,
+    subtitle: ui.privacyHidden ? '***' : project.name,
     body,
     footer: '<button class="btn btn-primary" type="submit" form="expenseForm">' + icon('check') + (isEdit ? '保存修改' : '保存账目') + '</button>',
     onMount(backdrop) {
@@ -3948,11 +4253,7 @@ function openExpenseSheet(project, existing) {
       function setAmountPreview() {
         const raw = amountInput.value.trim();
         const cents = parseAmountExpression(raw);
-        if (raw && /[+\-*/()×÷−]/.test(raw)) {
-          preview.textContent = Number.isFinite(cents) && cents > 0 ? '= ' + money(cents) : '';
-        } else {
-          preview.textContent = '';
-        }
+        preview.textContent = raw && Number.isFinite(cents) && cents > 0 ? '= ' + money(cents) : '';
         amountError.textContent = '';
         updateSplitPreview();
       }
@@ -3978,7 +4279,7 @@ function openExpenseSheet(project, existing) {
       amountInput.addEventListener('input', setAmountPreview);
 
       function renderSubchips() {
-        const subs = catMeta(draft.category).subs;
+        const subs = projectSubs(project, draft.category);
         subWrap.innerHTML = subs.map(sub =>
           '<button type="button" class="subchip ' + (sub === draft.subcategory ? 'on' : '') + '" data-sub="' + esc(sub) + '">' + esc(sub) + '</button>'
         ).join('');
@@ -3994,14 +4295,16 @@ function openExpenseSheet(project, existing) {
         payerSelect.querySelectorAll('[data-payer]').forEach(btn => {
           btn.addEventListener('click', () => {
             draft.payerId = btn.dataset.payer;
+            if (draft.payerId === EXTERNAL_PAYER_ID) draft.splitMode = 'none';
             renderPayerChips();
+            renderSplitArea();
           });
         });
       }
       backdrop.querySelectorAll('#catPicker [data-cat]').forEach(btn => {
         btn.addEventListener('click', () => {
           draft.category = btn.dataset.cat;
-          draft.subcategory = catMeta(draft.category).subs[0];
+          draft.subcategory = projectSubs(project, draft.category)[0];
           backdrop.querySelectorAll('#catPicker [data-cat]').forEach(b => b.classList.toggle('on', b === btn));
           renderSubchips();
         });
@@ -4094,6 +4397,7 @@ function openExpenseSheet(project, existing) {
         const amountCents = parseAmountExpression(amountInput.value);
         const summary = splitArea.querySelector('#sharePreviewText');
         const ids = Array.from(draft.participants);
+        if (draft.splitMode === 'none') return;
         if (draft.splitMode === 'personal') {
           const m = findMember(project, ids[0]);
           if (summary) summary.textContent = m ? m.name + ' 个人承担' : '请选择成员';
@@ -4170,17 +4474,15 @@ function openExpenseSheet(project, existing) {
         }
         const date = backdrop.querySelector('#expDate').value;
         if (!parseISO(date)) { showExpenseError('请选择有效日期'); return; }
-        const reimburseDate = backdrop.querySelector('#expReimburseDate').value;
-        if (reimburseDate && !parseISO(reimburseDate)) { showExpenseError('报销日期格式不正确'); return; }
-        const title = backdrop.querySelector('#expTitle').value.trim();
         const detail = backdrop.querySelector('#expDetail').value.trim();
         const note = backdrop.querySelector('#expNote').value.trim();
-        if (!findMember(project, draft.payerId)) { showExpenseError('请选择付款人'); return; }
+        const amountExpression = amountInput.value.trim().slice(0, 80);
+        if (draft.payerId !== EXTERNAL_PAYER_ID && !findMember(project, draft.payerId)) { showExpenseError('请选择暂付款方'); return; }
         let participants = Array.from(draft.participants);
         if (draft.splitMode === 'personal') {
           participants = participants.slice(0, 1);
           if (!participants.length) { showExpenseError('请选择由谁承担这笔费用'); return; }
-        } else if (!participants.length) {
+        } else if (draft.splitMode !== 'none' && !participants.length) {
           showExpenseError('请至少选择一位分摊成员');
           return;
         }
@@ -4224,9 +4526,9 @@ function openExpenseSheet(project, existing) {
           payerId: draft.payerId,
           category: draft.category,
           subcategory: draft.subcategory,
-          title: (title || draft.subcategory).slice(0, 60),
+          title: '',
           detail: detail.slice(0, 200),
-          reimburseDate,
+          amountExpression,
           amountCents,
           splitMode: draft.splitMode,
           participants,
@@ -4279,22 +4581,24 @@ function openExpenseSheet(project, existing) {
 }
 
 function payerChipsHTML(project, draft) {
-  return project.members.map(m =>
-    '<button type="button" class="member-chip ' + (m.id === draft.payerId ? 'on' : '') + '" data-payer="' + esc(m.id) + '">' +
-      memberAvatar(m) + '<span>' + esc(m.name) + '</span>' +
-      (m.id === draft.payerId ? icon('check', 'sm tick') : '') + '</button>'
+  const memberChips = project.members.map(m =>
+    '<button type="button" class="member-chip payer-member-chip ' + (m.id === draft.payerId ? 'on' : '') + '" data-payer="' + esc(m.id) + '" aria-label="' + esc(m.name) + '" title="' + esc(m.name) + '">' +
+      memberAvatar(m) + (m.id === draft.payerId ? icon('check', 'sm tick') : '') + '</button>'
   ).join('');
+  const external = '<button type="button" class="member-chip external-chip ' + (draft.payerId === EXTERNAL_PAYER_ID ? 'on' : '') + '" data-payer="' + EXTERNAL_PAYER_ID + '">' +
+    '<span class="avatar avatar-external">其</span><span class="external-label">其他</span>' +
+    (draft.payerId === EXTERNAL_PAYER_ID ? icon('check', 'sm tick') : '') + '</button>';
+  return memberChips + external;
 }
 
 function splitAreaHTML(draft, project) {
   const ids = Array.from(draft.participants);
-  const modeButtons = [['equal', '均分'], ['weights', '按份数'], ['amounts', '指定金额'], ['personal', '个人承担']].map(([key, label]) =>
+  const modeButtons = [['equal', '均分'], ['weights', '按份数'], ['amounts', '指定金额'], ['personal', '个人承担'], ['none', '无需分摊']].map(([key, label]) =>
     '<button type="button" class="seg-btn ' + (draft.splitMode === key ? 'on' : '') + '" data-split="' + key + '">' + label + '</button>'
   ).join('');
   const memberChips = project.members.map(m =>
-    '<button type="button" class="member-chip ' + (draft.participants.has(m.id) ? 'on' : '') + '" data-part="' + esc(m.id) + '">' +
-      memberAvatar(m) + '<span>' + esc(m.name) + '</span>' +
-      (draft.participants.has(m.id) ? icon('check', 'sm tick') : '') + '</button>'
+    '<button type="button" class="member-chip payer-member-chip ' + (draft.participants.has(m.id) ? 'on' : '') + '" data-part="' + esc(m.id) + '" aria-label="' + esc(m.name) + '" title="' + esc(m.name) + '">' +
+      memberAvatar(m) + (draft.participants.has(m.id) ? icon('check', 'sm tick') : '') + '</button>'
   ).join('');
   let detail = '';
   if (draft.splitMode === 'equal') {
@@ -4322,18 +4626,23 @@ function splitAreaHTML(draft, project) {
     }).join('') + '</div>' +
       '<div class="remain-line" id="remainLine"><span>已分配 ¥0</span><strong>还差</strong></div>' +
       '<div class="share-preview"><span>每个人承担的具体金额</span><button type="button" class="btn-link" id="fillEqual">按人均填充</button><strong id="sharePreviewText">逐人指定金额</strong></div>';
+  } else if (draft.splitMode === 'none') {
+    detail = '<div class="share-preview"><span>这笔费用不需要任何成员分摊</span><strong>每人 0 元</strong></div>';
   } else {
     detail = '<div class="share-preview"><span>整笔费用只算在一位成员头上</span><strong id="sharePreviewText">请选择成员</strong></div>';
   }
-  return '<div class="split-head"><span class="split-title">如何分摊</span>' +
-      (draft.splitMode !== 'personal'
-        ? '<div class="split-actions"><button type="button" id="splitAll">全选</button><button type="button" id="splitClear">清空</button></div>'
-        : '<span class="stats-card-note">个人消费</span>') +
-    '</div>' +
-    '<div class="segmented" style="margin-bottom:11px">' + modeButtons + '</div>' +
-    '<div class="field-label" style="margin-bottom:5px">' + (draft.splitMode === 'personal' ? '由谁承担' : '参与分摊') + '</div>' +
-    '<div class="member-select">' + memberChips + '</div>' + detail +
-    '<p class="field-hint" style="margin-top:8px">付款人可以不在分摊名单里，例如 A 先垫付、B 个人消费。</p>';
+  const showMembers = draft.splitMode !== 'none';
+  const action = draft.splitMode === 'personal'
+    ? '<span class="stats-card-note">个人消费</span>'
+    : (draft.splitMode === 'none' ? '<span class="stats-card-note">无需分摊</span>'
+      : '<div class="split-actions"><button type="button" id="splitAll">全选</button><button type="button" id="splitClear">清空</button></div>');
+  return '<div class="split-head"><span class="split-title">如何分摊</span>' + action + '</div>' +
+    '<div class="segmented five" style="margin-bottom:11px">' + modeButtons + '</div>' +
+    (showMembers
+      ? '<div class="field-label" style="margin-bottom:5px">' + (draft.splitMode === 'personal' ? '由谁承担' : '参与分摊') + '</div>' +
+        '<div class="member-select">' + memberChips + '</div>'
+      : '') + detail +
+    '<p class="field-hint" style="margin-top:8px">暂付款方选「其他」时默认无需分摊；选成员支付时，可正常分摊。</p>';
 }
 
 /* ---------- 启动 ---------- */
@@ -4389,19 +4698,57 @@ function installTouchIcon() {
     ctx.arcTo(0, 180, 0, 0, radius);
     ctx.arcTo(0, 0, 180, 0, radius);
     ctx.closePath();
-    ctx.fillStyle = '#1c6353';
+    const bg = ctx.createLinearGradient(0, 0, 180, 180);
+    bg.addColorStop(0, '#70587f');
+    bg.addColorStop(1, '#3f304c');
+    ctx.fillStyle = bg;
     ctx.fill();
-    ctx.strokeStyle = 'rgba(248,242,229,.12)';
-    ctx.lineWidth = 6;
+    ctx.strokeStyle = 'rgba(248,242,229,.14)';
+    ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.arc(148, 28, 48, 0, Math.PI * 2); ctx.stroke();
+    ctx.save();
+    ctx.scale(180 / 512, 180 / 512);
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    const traceS = () => {
+      ctx.beginPath();
+      ctx.moveTo(415, 190);
+      ctx.bezierCurveTo(408, 122, 337, 82, 255, 88);
+      ctx.bezierCurveTo(166, 94, 98, 157, 112, 225);
+      ctx.bezierCurveTo(124, 286, 205, 307, 268, 304);
+      ctx.bezierCurveTo(344, 300, 413, 323, 414, 382);
+      ctx.bezierCurveTo(415, 451, 333, 490, 250, 490);
+      ctx.bezierCurveTo(180, 490, 120, 458, 96, 410);
+    };
+    ctx.strokeStyle = 'rgba(248,237,223,.45)';
+    ctx.lineWidth = 3;
     ctx.beginPath();
-    ctx.arc(150, 30, 52, 0, Math.PI * 2);
+    ctx.moveTo(338, 123); ctx.lineTo(500, 103);
+    ctx.moveTo(336, 145); ctx.lineTo(500, 126);
+    ctx.moveTo(12, 430); ctx.lineTo(248, 454);
+    ctx.moveTo(12, 452); ctx.lineTo(244, 476);
     ctx.stroke();
-    ctx.fillStyle = '#f8f2e5';
-    ctx.font = '700 104px "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.font = '800 112px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif';
-    ctx.fillText('S', 90, 96);
+    ctx.strokeStyle = 'rgba(248,237,223,.07)';
+    ctx.lineWidth = 84; traceS(); ctx.stroke();
+    ctx.strokeStyle = 'rgba(248,237,223,.10)';
+    ctx.lineWidth = 76; traceS(); ctx.stroke();
+    ctx.strokeStyle = 'rgba(248,237,223,.15)';
+    ctx.lineWidth = 68; traceS(); ctx.stroke();
+    ctx.strokeStyle = 'rgba(248,237,223,.24)';
+    ctx.lineWidth = 60; traceS(); ctx.stroke();
+    ctx.strokeStyle = '#f7ead8';
+    ctx.lineWidth = 52; traceS(); ctx.stroke();
+    ctx.strokeStyle = 'rgba(255,253,247,.45)';
+    ctx.lineWidth = 9;
+    ctx.beginPath();
+    ctx.moveTo(390, 156);
+    ctx.bezierCurveTo(367, 117, 312, 99, 260, 104);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(248,237,223,.55)';
+    ctx.beginPath(); ctx.arc(100, 96, 7, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = 'rgba(248,237,223,.3)';
+    ctx.beginPath(); ctx.arc(80, 73, 3.5, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
     const link = document.createElement('link');
     link.rel = 'apple-touch-icon';
     link.setAttribute('sizes', '180x180');

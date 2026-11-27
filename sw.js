@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'tongxing-ledger-v1';
+const CACHE_NAME = 'tongxing-ledger-v15';
 const APP_SHELL = ['./index.html', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', event => {
